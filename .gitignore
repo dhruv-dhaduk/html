@@ -1,2 +1,10 @@
 *.txt
 *.exe
+
+*jpg
+!youtuve.jpg
+
+*png
+!got.png
+
+learn.html
