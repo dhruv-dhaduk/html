@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+p {
+    text-align: center;                
+    color: white;
+    list-style-type: none;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 0;
+}
+
+a{
+    color: white;
+}
