@@ -41,7 +41,7 @@ button {
     box-shadow: 5px 5px 5px white ;
 }
 
-button:hover {
+button:active {
     background-color: red;
     box-shadow: none;
     cursor: none;
