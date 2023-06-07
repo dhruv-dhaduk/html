@@ -5,7 +5,7 @@ body {
 }
 
 a {
-    color: rgb(162, 255, 0);
+    color: rgb(204, 255, 0);
 }
 
 a:hover {
@@ -17,10 +17,22 @@ a:active {
     color: red;
 }
 
-#profilepicholder {
+#heading {
     text-align: center;
 }
 
-#name {
+h3 + ul li + li + li a {
+    color: red;
+}
+
+h2 {
     text-align: center;
+}
+
+.book {
+    padding: 10px;
+}
+
+.category h2 + ul li {
+    list-style-type: square;
 }
