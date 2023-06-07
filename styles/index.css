@@ -26,7 +26,7 @@ p {
 }
 
 hr {
-    width: 20vw;
+    width: 200px    ;
     margin-top: 5px;
     margin-bottom: 20px;
 }
@@ -36,7 +36,7 @@ button {
     background-color: blue;
     color: white;
     padding: 10px;
-    width: 15vw;
+    width: 150px;
     border-radius: 12px;
     box-shadow: 5px 5px 5px white ;
 }
