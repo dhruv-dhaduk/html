@@ -21,8 +21,6 @@ p {
     margin: 0;
 
     font-family: Arial;
-
-    
 }
 
 hr {
@@ -31,17 +29,17 @@ hr {
     margin-bottom: 20px;
 }
 
-button {
+.pagebtn {
     border: none;
     background-color: blue;
     color: white;
     padding: 10px;
     width: 5cm;
     border-radius: 12px;
-    box-shadow: 5px 5px 5px white ;
+    box-shadow: 5px 5px 5px white;
 }
 
-button:active {
+.pagebtn:active {
     background-color: red;
     box-shadow: none;
     cursor: none;
