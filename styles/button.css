@@ -14,7 +14,8 @@ button {
     font-size: 20px;
     color: white;
     cursor: none;
-    border-radius: 12px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     
     position: absolute;
     left: 0;

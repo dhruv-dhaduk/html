@@ -37,7 +37,9 @@ hr {
     color: white;
     padding: 10px;
     width: 5cm;
-    border-radius: 12px;
+    /* border-radius: 12px; */
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     box-shadow: 5px 5px 5px white;
 }
 
