@@ -5,11 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Button</title>
         <link rel="stylesheet" href="../styles/button.css">
+
+        <script>
+            function changeContent(e)
+            {
+                e.innerHTML = "तुम अपने मार्ग से भटक रहे हो वत्स";
+            }
+        </script>
     </head>
 
     <body>
-        <a href="#" target="_blank">
-            <button> Click Me </button>
-        </a>
+        
+        <button onclick="changeContent(this)"> Click Me </button>
     </body>
 </html>
