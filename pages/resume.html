@@ -145,6 +145,10 @@
 
                 widthStr = minWH.toString().concat("px");
                 document.body.style.width = minWH.toString().concat("px");
+
+                fontSize = (minWH / 50).toString().concat("px");
+
+                document.getElementById("heading").style.fontSize = fontSize;
             }
 
             resizePage();
