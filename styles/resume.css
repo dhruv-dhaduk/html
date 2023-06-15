@@ -83,6 +83,10 @@ a:active, #name + ul > li > a:active{
     text-align: start;
 
     margin: 0.5em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo {
