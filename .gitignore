@@ -2,15 +2,6 @@
 !data/*.txt
 *.exe
 
-*jpg
-!youtuve.jpg
-!jon_snow.jpg
-
-*png
-!got.png
-!youtube.png
-
-
 *.mp4
 
 learn.html
