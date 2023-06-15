@@ -1,7 +1,24 @@
+html {
+    background-color: white;
+    overflow-x: hidden;
+}
+
 body {
     background-color: black;
     color: rgb(0, 255, 0);
     font-family: "Lucida Console", sans-serif;
+
+    /* width: 100vh; */
+    /* height: 100%; */
+    overflow-x: hidden;
+
+    border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    padding: 1vh;
 }
 
 a {
@@ -17,10 +34,32 @@ a:active {
     color: red;
 }
 
+#heading {
+    background-color: darkgray;
+}
+
 #profilepicholder {
     text-align: center;
 }
 
-#name {
-    text-align: center;
+.heading {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#profilepicholder {
+    background-color: aliceblue;
+    border-radius: 50%;
+    padding: 1vw;
+    width: 50%;
+}
+
+#profilepic {
+    border-radius: 50%;
+}
+
+#contactinfo {
+    background-color: antiquewhite;
+    width: 40%;
+    height: 100%;
 }

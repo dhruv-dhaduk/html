@@ -8,10 +8,10 @@
     <body>
         <div id="page">
             <div id="heading">
-                <div id="profilepicholder">
+                <div id="profilepicholder" class="heading">
                     <img src="../res/jon_snow.jpg" alt="Profile Picture" id="profilepic">
                 </div>
-                <div id="contactinfo">
+                <div id="contactinfo" class="heading">
                     <h1 id="name">Dhruv Dhaduk</h1>
                     <h3>Contact info : </h3>
                     <ul>
@@ -25,53 +25,53 @@
                         <li><a href="#">Portfolio</a></li>
                     </ul>
                 </div>
+            </div>
 
-                <hr>
+            <hr>
                 
-                <div id="skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Programming Languages : 
-                            <ul>
-                                <li>C</li>
-                                <li>C++</li>
-                                <li>Java</li>
-                                <li>XML</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Python</li>
-                            </ul>
-                        </li>
-                        <li>CSS preprocessors : Sass</li>
-                        <li>Frontend Frameworks : 
-                            <ul>
-                                <li>Bootstrap</li>
-                                <li>Tailwind CSS</li>
-                                <li>React</li>
-                                <li>Native Android</li>
-                            </ul>
-                        </li>
-                        <li>Backend Frameworks : 
-                            <ul>
-                                <li>Django</li>
-                                <li>Node.js</li>
-                                <li>Spring boot</li>
-                            </ul>
-                        </li>
-                        <li>Git and GitHub</li>
-                        <li>Linux commands and bash</li>
-                        <li>Databases : 
-                            <ul>
-                                <li>MySQL</li>
-                                <li>MongoDB</li>
-                                <li>Oracle</li>
-                                <li>MariaDB</li>
-                            </ul>
-                        </li>
-                        <li>Deploying web apps using AWS EC2</li>
-                    </ul>
-                </div>
+            <div id="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Programming Languages : 
+                        <ul>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>XML</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                        </ul>
+                    </li>
+                    <li>CSS preprocessors : Sass</li>
+                    <li>Frontend Frameworks : 
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>Tailwind CSS</li>
+                            <li>React</li>
+                            <li>Native Android</li>
+                        </ul>
+                    </li>
+                    <li>Backend Frameworks : 
+                        <ul>
+                            <li>Django</li>
+                            <li>Node.js</li>
+                            <li>Spring boot</li>
+                        </ul>
+                    </li>
+                    <li>Git and GitHub</li>
+                    <li>Linux commands and bash</li>
+                    <li>Databases : 
+                        <ul>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Oracle</li>
+                            <li>MariaDB</li>
+                        </ul>
+                    </li>
+                    <li>Deploying web apps using AWS EC2</li>
+                </ul>
             </div>
 
             <hr>
@@ -137,5 +137,23 @@
 
             <hr>
         </div>
+
+
+        <script>
+            function resizePage()
+            {
+                w = visualViewport.width;
+                h = visualViewport.height;
+                minWH = Math.min(w, h);
+
+                widthStr = minWH.toString().concat("px");
+                document.body.style.width = minWH.toString().concat("px");
+            }
+
+            resizePage();
+
+            window.addEventListener("resize", resizePage)
+        </script>
+
     </body>
 </html>
