@@ -1,0 +1,8 @@
+body {
+    background-color: lightgray;
+}
+
+.container {
+    background-color: white;
+    width: fit-content;
+}
