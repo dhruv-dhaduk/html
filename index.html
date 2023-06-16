@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles/index.css">
 
         <script>
+
             function redirect(e)
             {
                 url = "pages/" + e.id + ".html";
@@ -21,16 +22,25 @@
 
         <hr>
         
-        <p> <button class="pagebtn" id="headings" onclick="redirect(this)">Headings</button> </p>
-        <p> <button class="pagebtn" id="image" onclick="redirect(this)">Image</button> </p>
-        <p> <button class="pagebtn" id="button" onclick="redirect(this)">Button</button> </p>
-        <p> <button class="pagebtn" id="songs" onclick="redirect(this)">Songs</button> </p>
-        <p> <button class="pagebtn" id="resume" onclick="redirect(this)">Resume</button> </p>
-        <p> <button class="pagebtn" id="books" onclick="redirect(this)">Books</button> </p>
-        <p> <button class="pagebtn" id="counter" onclick="redirect(this)">Counter</button> </p>
-        <p> <button class="pagebtn" id="google" onclick="redirect(this)">Sasta Google</button> </p>
-        <p> <button class="pagebtn" id="overflow" onclick="redirect(this)">Overflow</button> </p>
-        <p> <button class="pagebtn" id="lengths" onclick="redirect(this)">Lengths</button> </p>
-        
+        <p> <button class="pagebtn" id="headings">Headings</button> </p>
+        <p> <button class="pagebtn" id="image">Image</button> </p>
+        <p> <button class="pagebtn" id="button">Button</button> </p>
+        <p> <button class="pagebtn" id="songs">Songs</button> </p>
+        <p> <button class="pagebtn" id="resume">Resume</button> </p>
+        <p> <button class="pagebtn" id="books">Books</button> </p>
+        <p> <button class="pagebtn" id="counter">Counter</button> </p>
+        <p> <button class="pagebtn" id="google">Sasta Google</button> </p>
+        <p> <button class="pagebtn" id="overflow">Overflow</button> </p>
+        <p> <button class="pagebtn" id="lengths">Lengths</button> </p>
+
+        <script>
+            pagebtns = document.getElementsByClassName("pagebtn");
+
+            for (let i = 0; i < pagebtns.length; i++)
+            {
+                pagebtns[i].addEventListener("click", function() {redirect(pagebtns[i])});
+            }
+        </script>
+
     </body>
     </html>
