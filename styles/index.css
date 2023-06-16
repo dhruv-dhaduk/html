@@ -48,3 +48,7 @@ hr {
     box-shadow: none;
     cursor: none;
 }
+
+a {
+    text-decoration: none;
+}
