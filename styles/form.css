@@ -1,8 +1,95 @@
 body {
-    background-color: lightgray;
+    background-color: #575757;
+}
+
+hr {
+    border-color: #505050;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    background-color: white;
+    background-color: #282828;
+    color: white;
+    font-family: Calibri;
+    font-size: 1.2em;
+
+    border-radius: 1rem;
+
+    box-shadow: 0px 0px 0.3rem 0.3rem white;
+
     width: fit-content;
+    padding: 10px;
+    height: fit-content;
+
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.form-element {
+    padding: 10px;
+    text-align: start;
+}
+
+.form-input input{
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    color: white;
+
+    padding: 0.5em;
+}
+
+label {
+    color: #b5b5b5;
+}
+
+input::placeholder {
+    color: #707070;
+}
+
+.heading {
+    text-align: center;
+    cursor: default;
+}
+
+.heading h1 {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.form-input > * {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.submit {   
+    text-align: center;
+}
+
+#submit {
+    font-size: 0.8em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    border-radius: 0.4em;
+
+    background-color: #1a1a1a;
+    color: white;
+
+    border: 1px solid white;
+    
+    display: inline-block;
+}
+
+#submit:hover {
+    box-shadow: 0 0 0.2em 0.2em white;
+    cursor: pointer;
 }
