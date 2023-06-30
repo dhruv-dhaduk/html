@@ -4,6 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Resume</title>
         <link rel="stylesheet" href="../styles/resume.css">
+
+        <script>
+            function pxOf(rem)
+            {
+                return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+            }
+        </script>
+
     </head>
     <body>
         <div id="page">
@@ -143,6 +151,7 @@
 
 
         <script>
+
             function resizePage()
             {
                 w = visualViewport.width;
@@ -150,7 +159,7 @@
                 minWH = Math.min(w, h);
 
                 widthStr = minWH.toString().concat("px");
-                document.body.style.width = minWH.toString().concat("px");
+                document.body.style.width = (minWH - pxOf(3)).toString().concat("px");
 
                 fontSize = (minWH / 50).toString().concat("px");
 
