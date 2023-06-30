@@ -1,10 +1,16 @@
 html {
-    background-color: lightgray;
+    background-color: #575757;
     overflow-x: hidden;
 }
 
 body {
-    background-color: white;
+
+    background-color: #282828;
+    color: white;
+
+    border-radius: 0.5rem;
+
+    box-shadow: 0 0 1rem 1rem black;
 
     font-family: sans-serif;
 
@@ -12,19 +18,30 @@ body {
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     padding: 1%;
 }
 
-a {
-    color: rgb(162, 255, 0);
+hr {
+    border-color: #505050;
+    margin: 0;
+    padding: 0;
 }
 
+
 #name + ul > li > a {
-    color: black;
+    color: white;
     text-decoration: none;
+}
+
+#name + ul > li > a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: rgb(162, 255, 0);
 }
 
 a:hover {
@@ -32,9 +49,6 @@ a:hover {
     color: green;
 }
 
-#name + ul > li > a:hover {
-    text-decoration: underline;
-}
 
 a:active, #name + ul > li > a:active{
     color: red;
@@ -74,6 +88,8 @@ a:active, #name + ul > li > a:active{
 #name + ul li {
 
     list-style: none;
+    
+    text-indent: 25%;
     
     margin: 0.5em;
 
