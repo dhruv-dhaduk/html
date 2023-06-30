@@ -82,7 +82,11 @@ a:active, #name + ul > li > a:active{
 }
 
 #name {
-    text-align: center;
+    text-indent: 25%;
+}
+
+#name + ul {
+    padding: 0;
 }
 
 #name + ul li {
