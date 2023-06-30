@@ -6,7 +6,7 @@ html {
 body {
 
     background-color: #282828;
-    color: white;
+    color: rgb(180, 180, 180);
 
     border-radius: 0.5rem;
 
@@ -30,29 +30,55 @@ hr {
     padding: 0;
 }
 
+h1,
+h2 {
+    color: rgb(200, 200, 200);
+}
 
-#name + ul > li > a {
+a {
     color: white;
     text-decoration: none;
 }
 
-#name + ul > li > a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-a {
-    color: rgb(162, 255, 0);
+.logo {
+    height: 1em;
+    vertical-align: middle;
 }
 
-a:hover {
-    text-decoration: none;
-    color: green;
+.page-content ul {
+    list-style-type: none;
+}
+
+.page-content ul > li::before {
+    /* content: '\27A5'; */
+    display: inline-block;
+    margin-right: 0.5em;
+
+    /* width: 1em; */
+    color: rgb(200, 200, 200);
+}
+
+.content-li::before {
+    content: '\27A5';
+}
+
+.content-li ul li::before {
+    content: '\2767';
 }
 
 
-a:active, #name + ul > li > a:active{
-    color: red;
+li {
+    margin: 0.5em;
 }
+
+.page-content{
+    padding: 1%;
+}
+
 
 .heading {
     display: inline-block;
@@ -100,9 +126,4 @@ a:active, #name + ul > li > a:active{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.logo {
-    height: 1em;
-    vertical-align: middle;
 }

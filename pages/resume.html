@@ -34,10 +34,10 @@
 
             <hr>
                 
-            <div id="skills">
-                <h3>Skills</h3>
+            <div id="skills" class="page-content">
+                <h2>Skills</h2>
                 <ul>
-                    <li>Programming Languages : 
+                    <li class="content-li">Programming Languages : 
                         <ul>
                             <li>C</li>
                             <li>Assembly</li>
@@ -47,20 +47,20 @@
                         </ul>
                     </li>
 
-                    <li>Markup Languages :
+                    <li class="content-li">Markup Languages :
                         <ul>
                             <li>HTML</li>
                             <li>Markdown</li>
                         </ul>
                     </li>
 
-                    <li>Stylesheet languages :
+                    <li class="content-li">Stylesheet languages :
                         <ul>
                             <li>CSS</li>
                         </ul>
                     </li>
 
-                    <li>Frontend Frameworks : 
+                    <li class="content-li">Frontend Frameworks : 
                         <ul>
                             <li>Bootstrap</li>
                             <li>Tailwind CSS</li>
@@ -68,77 +68,78 @@
                             <li>Native Android</li>
                         </ul>
                     </li>
-                    <li>Backend Frameworks : 
+
+                    <li class="content-li">Backend Frameworks : 
                         <ul>
                             <li>Django</li>
                         </ul>
                     </li>
-                    <li>Git and GitHub</li>
-                    <li>Linux commands and bash</li>
-                    <li>Databases : 
+
+                    <li class="content-li">Git and GitHub</li>
+                    <li class="content-li">Linux commands and bash</li>
+                    <li class="content-li">Databases : 
                         <ul>
                             <li>MySQL</li>
                             <li>PostgreSQL</li>
                         </ul>
                     </li>
-                    <li>Deploying web apps using AWS</li>
+                    <li class="content-li">Deploying web apps using AWS</li>
                 </ul>
             </div>
 
             <hr>
             
-            <div id="education">
-                <h3>Education : </h3>
+            <div id="education" class="page-content">
+                <h2>Education : </h2>
                 <ul>
-                    <li>
-                        <a href="https://www.ldce.ac.in" target="_blank">L. D. College of Engineering</a> - &#40;2021 - 2025&#41;
+                    <li class="content-li">
+                        <a href="https://www.ldce.ac.in" target="_blank">L. D. College of Engineering <img src="../res/logos/white/redirect_white.png" class="logo"></a> - &#40;2021 - 2025&#41;
                     </li>
                 </ul>
             </div>
 
             <hr>
 
-            <div id="courses">
-                <h3>Relevent Courses : </h3>
+            <div id="courses" class="page-content">
+                <h2>Relevent Courses : </h2>
                 <ul>
-                    <li>
+                    <li class="content-li">
                         CS50 Introduction to Computer Science
-                        <br>
-                        <small>by Harvard University from <a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x" target="_blank">edX</a></small>
+                        <small>by Harvard University from <a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x" target="_blank">edX <img src="../res/logos/white/redirect_white.png" class="logo"></a></small>
                     </li>
                 </ul>
             </div>
 
             <hr>
             
-            <div id="projects">
-                <h3>Projects :</h3>
+            <div id="projects" class="page-content">
+                <h2>Projects :</h2>
                 <ul>
-                    <li>Rocket Launching Game
+                    <li class="content-li">Rocket Launching Game
                         <div class="project_discription">
                             <ul>
                                 <li>Implemeted a rocket launching game using Scratch programming language.</li>
                                 <li>Although the animation used in this game is not quite realistic, but the calculation used here are very close to real Apollo 11 Saturn V launch.</li>
-                                <li><a href="https://scratch.mit.edu/projects/727483013/" target="_blank">Click Here</a> to play</li>
+                                <li><a href="https://scratch.mit.edu/projects/727483013/" target="_blank">Click Here <img src="../res/logos/white/redirect_white.png" class="logo"></a> to play</li>
                             </ul>
                         </div>
                     </li>
 
-                    <li>Simple Calculator App
+                    <li class="content-li">Simple Calculator App
                         <div class="project_discription">
                             <ul>
                                 <li>Implemented a simple calculator app using Native Android SDK.</li>
                                 <li>It has basic calculation functionality like any other calculator app.</li>
-                                <li><a href="https://drive.google.com/file/d/1LQaDCnOO9mLfVj32LZc8SVEmu90P2y_D/view?usp=share_link" target="_blank">Click here</a> to download.</li>
+                                <li><a href="https://drive.google.com/file/d/1LQaDCnOO9mLfVj32LZc8SVEmu90P2y_D/view?usp=share_link" target="_blank">Click here <img src="../res/logos/white/redirect_white.png" class="logo"></a> to download.</li>
                             </ul>
                         </div>
                     </li>
 
-                    <li>Tic Tac Toe Game
+                    <li class="content-li">Tic Tac Toe Game
                         <div class="project_discription">
                             <ul>
                                 <li>Implemented a simple Tic Tac Toe game using Native Android SDK. </li>
-                                <li><a href="https://drive.google.com/file/d/1WpHXJFGSQjn0rGcEvp12_sGlOF2cg_gS/view?usp=share_link" target="_blank">Click here</a> to download.</li>
+                                <li><a href="https://drive.google.com/file/d/1WpHXJFGSQjn0rGcEvp12_sGlOF2cg_gS/view?usp=share_link" target="_blank">Click here <img src="../res/logos/white/redirect_white.png" class="logo"></a> to download.</li>
                             </ul>
                         </div>
                     </li>
@@ -163,7 +164,7 @@
 
                 fontSize = (minWH / 50).toString().concat("px");
 
-                document.getElementById("heading").style.fontSize = fontSize;
+                document.getElementById("page").style.fontSize = fontSize;
             }
 
             resizePage();
