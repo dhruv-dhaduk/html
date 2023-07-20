@@ -1,0 +1,67 @@
+body {
+    background-color: #575757;
+    color: white;
+}
+
+.container {
+    background-color: #282828;
+
+    padding: 1rem;
+
+    width: fit-content;
+    height: fit-content;
+    
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    text-align: center;
+
+    border-radius: 1em;
+
+    box-shadow: 0 0 0.5rem 0.5rem black;
+}
+
+.btn {
+    color: white;
+    background-color: #575757;
+
+    font-size: 1.5em;
+
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px white;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.btnInc,
+.btnDec {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 1rem;
+
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+.btnClr {
+    display: block;
+
+    width: 4em;
+    height: 1.5em;
+
+    margin: auto;
+}
+
+#counter {
+    text-align: center;
+
+    padding: 0;
+    margin: 1rem;
+}
