@@ -10,7 +10,9 @@
             function search()
             {
                 let value = document.getElementById("q").value;
-                window.location.href = "https://www.google.com/search?q=" + value;
+                let link = "https://www.google.com/search?q=" + value;
+
+                window.open(link, "_blank");
             }
         </script>
     </head>
