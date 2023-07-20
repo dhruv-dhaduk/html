@@ -1,0 +1,68 @@
+body {
+    background-color: #575757;
+    color: white;
+    font-family: arial,sans-serif;
+}
+
+.container {
+    background-color: #282828;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 1rem;
+
+    font-size: 1.5rem;
+    text-align: center;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem 0.5rem black;
+}
+
+.heading {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #ececec;
+
+    cursor: default;
+}
+
+.searchbar {
+    background-color: #1a1a1a;
+    color: white;
+
+    font-size: inherit;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    height: 2rem;
+
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.searchbtn {
+
+    font-size: inherit;
+    width: 2rem;
+    height: 2rem;
+
+    background-color: inherit;
+    background-image: url("../res/logos/white/search_white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    vertical-align: middle;
+
+    border: none;
+
+    cursor: pointer;
+}

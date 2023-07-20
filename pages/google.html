@@ -3,24 +3,59 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/google.css">
 
         <title>Sasta Google</title>
 
         <script>
+
+            /*
+             * Key Codes :
+             * Enter = 13
+             * Slash = 191
+            */
+
             function search()
             {
-                let value = document.getElementById("q").value;
+                let q = document.getElementById("q");
+                let value = q.value;
+
+                if (value.length == 0)
+                    return;
+
                 let link = "https://www.google.com/search?q=" + value;
 
                 window.open(link, "_blank");
+
+                q.value = null;
+
+            }
+
+            function checkKey(event)
+            {
+                if (event.which == 13)
+                {
+                    search();
+                }
+            }
+
+            function focus_searchbar(event)
+            {
+                if (event.which == 191)
+                {
+                    setTimeout(() => {
+                        document.getElementById("q").focus();
+                    }, 1);
+                }
             }
         </script>
     </head>
 
-    <body>
-        <h1>Sasta Google</h1>
-        <input type="text" placeholder="Enter here" id="q">
-        <br>
-        <button id="search" type="button" onclick="search()">Search</button>
+    <body onkeydown="focus_searchbar(event)">
+        <div class="container">
+            <h1 class="heading">सस्ता Google</h1>
+            <input class="searchbar" type="text" placeholder=" Enter here" id="q" onkeypress="checkKey(event)">
+            <button class="searchbtn" id="search" type="button" onclick="search()"></button>
+        </div>
     </body>
 </html>
