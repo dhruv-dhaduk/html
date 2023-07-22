@@ -31,7 +31,7 @@
 
             }
 
-            function checkKey(event)
+            function checkForEnter(event)
             {
                 if (event.which == 13)
                 {
@@ -39,22 +39,27 @@
                 }
             }
 
-            function focus_searchbar(event)
+            function focus_searchbar()
+            {
+                setTimeout(() => {
+                    document.getElementById("q").focus();
+                }, 1);
+            }
+
+            function focus_searchbar_keyevent(event)
             {
                 if (event.which == 191)
                 {
-                    setTimeout(() => {
-                        document.getElementById("q").focus();
-                    }, 1);
+                    focus_searchbar();
                 }
             }
         </script>
     </head>
 
-    <body onkeydown="focus_searchbar(event)">
-        <div class="container">
+    <body onkeydown="focus_searchbar_keyevent(event)">
+        <div class="container" onclick="focus_searchbar()">
             <h1 class="heading">सस्ता Google</h1>
-            <input class="searchbar" type="text" placeholder=" Enter here" id="q" onkeypress="checkKey(event)">
+            <input class="searchbar" type="text" placeholder=" Enter here" id="q" onkeypress="checkForEnter(event)">
             <button class="searchbtn" id="search" type="button" onclick="search()"></button>
         </div>
     </body>
