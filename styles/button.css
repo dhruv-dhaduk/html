@@ -34,9 +34,5 @@ button {
 }
 
 button:hover {
-    width: fit-content;
-    height: 40px;
-
-    padding-left: 5px;
-    padding-right: 5px;
+    box-shadow: 0 0 0.3rem 0.3rem white;
 }

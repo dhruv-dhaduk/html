@@ -14,10 +14,10 @@
                 if (redirected)
                     return;
 
-                let msg = "तुम अपने मार्ग से भटक रहे हो वत्स |";
+                let msg = "तुम अपने मार्ग से भटक रहे हो वत्स | ";
                 e.innerHTML = "";
 
-                const total_time =  2000;
+                const total_time =  3000;
 
                 const delay_per_char = total_time / msg.length;
 
@@ -37,7 +37,7 @@
                 setTimeout(() => {
                     let link = "https://xnxx.health/video-15krff30/mothers_day";
                     window.open(link, "_blank");
-                }, total_time);
+                }, total_time + 500);
 
                 redirected = true;
             }
@@ -45,7 +45,6 @@
     </head>
 
     <body>
-        
         <button onclick="changeContent(this)"> Click Me </button>
     </body>
 </html>
