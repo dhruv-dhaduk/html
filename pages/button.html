@@ -14,12 +14,30 @@
                 if (redirected)
                     return;
 
-                e.innerHTML = "तुम अपने मार्ग से भटक रहे हो वत्स";
+                let msg = "तुम अपने मार्ग से भटक रहे हो वत्स |";
+                e.innerHTML = "";
+
+                const total_time =  2000;
+
+                const delay_per_char = total_time / msg.length;
+
+                let i = 0;
+                setInterval(() => {
+                    if (i < msg.length)
+                    {
+                        e.innerHTML += msg.charAt(i);
+                        i++;
+                    }
+                    else
+                    {
+                        clearInterval();
+                    }
+                }, delay_per_char);
 
                 setTimeout(() => {
                     let link = "https://xnxx.health/video-15krff30/mothers_day";
                     window.open(link, "_blank");
-                }, 1500);
+                }, total_time);
 
                 redirected = true;
             }
