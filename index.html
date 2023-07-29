@@ -6,15 +6,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide&effect=neon|fire">
         <link rel="stylesheet" href="styles/index.css">
 
-        <script>
-
-            function redirect(e)
-            {
-                url = "pages/" + e.id + ".html";
-                window.open(url, "_blank");
-            }
-
-        </script>
+        <script src="javascript/index_start.js"></script>
     </head>
     <body>
         
@@ -33,14 +25,7 @@
         <p> <button class="pagebtn" id="lengths">Lengths</button> </p>
         <p> <button class="pagebtn" id="form">Form</button> </p>
 
-        <script>
-            pagebtns = document.getElementsByClassName("pagebtn");
-
-            for (let i = 0; i < pagebtns.length; i++)
-            {
-                pagebtns[i].addEventListener("click", function() {redirect(pagebtns[i])});
-            }
-        </script>
+        <script src="javascript/index_end.js"></script>
 
     </body>
     </html>

@@ -5,12 +5,7 @@
         <title>Resume</title>
         <link rel="stylesheet" href="../styles/resume.css">
 
-        <script>
-            function pxOf(rem)
-            {
-                return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-            }
-        </script>
+        <script src="../javascript/resume_start.js"></script>
 
     </head>
     <body>
@@ -150,26 +145,7 @@
         </div>
 
 
-        <script>
-
-            function resizePage()
-            {
-                w = visualViewport.width;
-                h = visualViewport.height;
-                minWH = Math.min(w, h);
-
-                widthStr = minWH.toString().concat("px");
-                document.body.style.width = (minWH - pxOf(2)).toString().concat("px");
-
-                fontSize = (minWH / 45).toString().concat("px");
-
-                document.getElementById("page").style.fontSize = fontSize;
-            }
-
-            resizePage();
-
-            window.addEventListener("resize", resizePage)
-        </script>
+        <script src="../javascript/resume_end.js"></script>
 
     </body>
 </html>
