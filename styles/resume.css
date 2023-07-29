@@ -99,10 +99,17 @@ li {
 #profilepic {
     border-radius: 50%;
     width: 100%;
-    height: 100%
+    height: 100%;
+
+    transition-duration: 500ms;
 
     /* width: 100px;
     height: 100px; */
+}
+
+#profilepic:hover {
+    scale: 1.1;
+    transition-duration: 500ms;
 }
 
 #contactinfo {
