@@ -11,6 +11,8 @@ function load_data()
 {
     const songlist = document.querySelector(".songlist");
 
+    var i = 0;
+
     for (const r of data)
     {
         const li = document.createElement("li");
@@ -28,9 +30,15 @@ function load_data()
         a.append(img);
         li.append(a);
         li.append(p);
+        if (i != data.length - 1)
+        {
+            const hr = document.createElement("hr");
+            li.append(hr);
+        }
 
         songlist.append(li);
 
+        i++;
     }
 }
 

@@ -2,6 +2,10 @@ body {
     background-color: black;
     color: white;
     font-family: sans-serif;
+    overflow-x: hidden;
+
+    padding: 0;
+    margin: 0;
 }
 
 #heading {
@@ -10,23 +14,30 @@ body {
 
 .songlist{
     list-style: none;
+    padding: 1rem;
+    text-align: center;
 }
 
 .thumbnail {
-    vertical-align: middle;
-    width: 30vw;
-    margin-right: 5ch;
+    margin: 0;
 
     transition-duration: 500ms;
+}
+
+@media (orientation:portrait) {
+    .thumbnail {
+        width: 80vw;
+    }
 }
 
 .thumbnail:hover {
     scale: 1.1;
+    box-shadow: 0 0 0.2rem 0.2rem white;
     transition-duration: 500ms;
 }
 
 .songname {
-    display: inline-block;
+    margin-bottom: 2rem;
 }
 
 .footer {
