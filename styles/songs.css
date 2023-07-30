@@ -14,6 +14,7 @@ body {
 
 .thumbnail {
     vertical-align: middle;
+    width: 30vw;
     margin-right: 5ch;
 
     transition-duration: 500ms;
