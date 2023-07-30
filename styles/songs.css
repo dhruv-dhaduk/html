@@ -20,6 +20,7 @@ body {
 
 .thumbnail {
     margin: 0;
+    margin-top: 2rem;
 
     transition-duration: 500ms;
 }
@@ -27,6 +28,12 @@ body {
 @media (orientation:portrait) {
     .thumbnail {
         width: 80vw;
+    }
+}
+
+@media (orientation:landscape) {
+    .thumbnail {
+        width: 30vw;
     }
 }
 
