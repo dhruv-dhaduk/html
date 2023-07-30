@@ -8,26 +8,30 @@ body {
     text-align: center;
 }
 
-li {
-    font-size: 18px;
-    margin: 10px;
+.songlist{
+    list-style: none;
 }
 
-img {
-    height: 40px;
-    margin-left: 10px;
+.thumbnail {
     vertical-align: middle;
+    margin-right: 5ch;
+
+    transition-duration: 500ms;
 }
 
-.yt {
-    background-color: black;
+.thumbnail:hover {
+    scale: 1.1;
+    transition-duration: 500ms;
+}
+
+.songname {
     display: inline-block;
-    width: 45px;
-    height: 40px;
-    vertical-align: middle;
-    margin-left: 10px;
+}
 
-    background-image: url(../res/logos/colored/youtube.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.footer {
+    text-align: center;
+}
+
+.sheetlink {
+    color: white;
 }
