@@ -58,12 +58,24 @@ function read_sheet() {
                     if (col0.toLowerCase() != "name" && col0.trim().charAt(0) != '#' && col1.trim().charAt(0) != '#')
                     {
                         const r = {};
-                        r["Name"] = col0;
-                        r["Link"] = col1;
+                        var i = col0.indexOf('#');
+                        if (i == -1)
+                            r["Name"] = col0;
+                        else
+                            r["Name"] = col0.substring(0, i).trim();
+
+                        i = col1.indexOf('#');
+                        if (i == -1)
+                            r["Link"] = col1;
+                        else 
+                            r["Link"] = col1.substring(0, i).trim();
+
                         data.push(r);
                     }
                 }
-                catch(err) { }
+                catch(err) {
+                    console.log(err)
+                }
             })
         });
 }
