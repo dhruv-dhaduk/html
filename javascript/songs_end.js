@@ -51,13 +51,19 @@ function read_sheet() {
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
 
             jsonData.table.rows.forEach((rowData) => {
-                if (rowData.c[0].v != "Name")
+                try
                 {
-                    const r = {};
-                    r["Name"] = rowData.c[0].v;
-                    r["Link"] = rowData.c[1].v;
-                    data.push(r);
+                    const col0 = rowData.c[0].v;
+                    const col1 = rowData.c[1].v;
+                    if (col0.toLowerCase() != "name" && col0.trim().charAt(0) != '#' && col1.trim().charAt(0) != '#')
+                    {
+                        const r = {};
+                        r["Name"] = col0;
+                        r["Link"] = col1;
+                        data.push(r);
+                    }
                 }
+                catch(err) { }
             })
         });
 }
