@@ -23,9 +23,12 @@ function load_data()
         a.href = r["Link"];
         a.target = "_blank";
         img.className = "thumbnail";
-        img.src = get_yt_thumbnail_link(r["Link"]);
+        img.src  = get_yt_thumbnail_link(r["Link"]);
         p.className = "songname";
         p.innerHTML = r["Name"];
+        img.addEventListener("mouseover", function(){
+            typing_effect(p, r["Name"], i);
+        }, false);
 
         a.append(img);
         li.append(a);
