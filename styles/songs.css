@@ -8,6 +8,13 @@ body {
     margin: 0;
 }
 
+.heading {
+    
+    /* background-color: red; */
+
+    margin: auto;
+}
+
 #heading {
     text-align: center;
 
@@ -20,6 +27,7 @@ body {
 }
 
 .songlist{
+    /* background-color: blue; */
     list-style: none;
     padding: 1rem;
     text-align: center;
@@ -38,13 +46,13 @@ body {
 }
 
 @media (orientation:portrait) {
-    .thumbnail {
+    .thumbnail, .heading{
         width: 80vw;
     }
 }
 
 @media (orientation:landscape) {
-    .thumbnail {
+    .thumbnail, .heading {
         width: 30vw;
     }
 }
@@ -59,13 +67,14 @@ body {
     margin-bottom: 2rem;
 }
 
-.footer {
-    text-align: center;
+.sheetinfo {
+    text-align: end;
 
     margin-top: 0;
     margin-bottom: 0;
 
     padding-top: 0.5rem;
+    padding-right: 1ch;
 
     height: 5vh;
 }
