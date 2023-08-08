@@ -10,12 +10,24 @@ body {
 
 #heading {
     text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-top: 1rem;
+
+    height: 8vh;
 }
 
 .songlist{
     list-style: none;
     padding: 1rem;
     text-align: center;
+
+    overflow-y: scroll;
+    height: 78vh;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .thumbnail {
@@ -49,32 +61,6 @@ body {
 
 .footer {
     text-align: center;
-}
-
-.sheetlink {
-    color: white;
-}
-
-#heading {
-    /* background-color: red; */
-    margin-top: 0;
-    margin-bottom: 0;
-
-    padding-top: 1rem;
-
-    height: 10vh;
-}
-
-.songlist {
-    /* background-color: green; */
-    overflow-y: scroll;
-    height: 75vh;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.footer {
-    /* background-color: blue; */
 
     margin-top: 0;
     margin-bottom: 0;
@@ -82,4 +68,8 @@ body {
     padding-top: 0.5rem;
 
     height: 5vh;
+}
+
+.sheetlink {
+    color: white;
 }
