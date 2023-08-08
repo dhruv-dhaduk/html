@@ -17,6 +17,8 @@ hr {
     
     width: fit-content;
     height: fit-content;
+
+    max-width: 90vw;
     
     position: absolute;
     margin: auto;
@@ -28,7 +30,7 @@ hr {
 
 .heading {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 
     cursor: default;
 }
@@ -37,12 +39,10 @@ hr {
     /* background-color: blue; */
     text-align: center;
 
-    font-size: 5rem;
+    font-size: 3rem;
 
     width: 10ch;
-
-    margin-left: 1ch;
-    margin-right: 1ch;
+    
     margin-top: 2rem;
 
     cursor: default;
@@ -58,7 +58,7 @@ hr {
     color: white;
     border-radius: 0.5rem;
 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
     margin-right: 1ch;
     padding: 0.2rem;
