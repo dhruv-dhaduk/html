@@ -31,7 +31,12 @@ function load_data()
         }, false);
 
         img.addEventListener("touchstart", function(){
+            img.classList.add("hover-effect");
             typing_effect(p, r["Name"], i);
+        }, false);
+
+        img.addEventListener("touchend", function(){
+            img.classList.remove("hover-effect");
         }, false);
 
         a.append(img);
