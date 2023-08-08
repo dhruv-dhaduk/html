@@ -30,6 +30,10 @@ function load_data()
             typing_effect(p, r["Name"], i);
         }, false);
 
+        img.addEventListener("touchstart", function(){
+            typing_effect(p, r["Name"], i);
+        }, false);
+
         a.append(img);
         li.append(a);
         li.append(p);
