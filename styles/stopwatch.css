@@ -29,16 +29,23 @@ hr {
 .heading {
     text-align: center;
     font-size: 3rem;
+
+    cursor: default;
 }
 
 .timer {
+    /* background-color: blue; */
     text-align: center;
 
     font-size: 5rem;
 
+    width: 10ch;
+
     margin-left: 1ch;
     margin-right: 1ch;
     margin-top: 2rem;
+
+    cursor: default;
 }
 
 .buttons {
@@ -60,6 +67,8 @@ hr {
 
     margin-top: 2rem;
     margin-bottom: 2rem;
+
+    display: inline-block;
 }
 
 .btn:hover {
