@@ -56,3 +56,63 @@ function read_sheet()
             })
         });
 }
+
+const biographylist = document.getElementById("biographylist");
+const engineeringlist = document.getElementById("engineeringlist");
+const historylist = document.getElementById("historylist");
+const sciencelist = document.getElementById("sciencelist");
+const otherlist = document.getElementById("otherlist");
+
+function load_data()
+{
+    for (const r of data)
+    {
+        const li = document.createElement("li");
+        const img = document.createElement("img");
+        const h3 = document.createElement("h3");
+        const ulbookdata = document.createElement("ul");
+        const liauthor = document.createElement("li");
+        const liyear = document.createElement("li");
+        const lilink = document.createElement("li");
+        const a = document.createElement("a");
+
+        li.className = "book";
+        img.src = gdrive_file_thumbnail(r["link"]) + "=s200";
+        h3.className = "bookname";
+        h3.innerHTML = r["name"];
+        ulbookdata.className = "bookdata";
+        liauthor.innerHTML = "<b>Author</b> : " + r["author"];
+        liyear.innerHTML = "<b>Publication Year</b> : " + r["year"];
+        a.innerHTML = "Download";
+        a.href = r["link"];
+        a.target = "_blank";
+
+        lilink.append(a);
+        ulbookdata.append(liauthor);
+        ulbookdata.append(liyear);
+        ulbookdata.append(lilink);
+        li.append(img);
+        li.append(h3);
+        li.append(ulbookdata);
+
+        get_list(r["category"]).append(li);
+    }
+}
+
+function get_list(category)
+{
+    switch (category) {
+        case "Biography" :
+            return biographylist;
+        case "Engineering" : 
+            return engineeringlist;
+        case "History" :
+            return historylist;
+        case "Science" :
+            return sciencelist;
+        case "Other" :
+            return otherlist;
+        default:
+            return null;
+    }
+}
