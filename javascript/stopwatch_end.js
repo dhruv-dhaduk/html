@@ -15,6 +15,8 @@ var starting_time_mills;
 
 var is_running = false;
 
+const max_mills_for_stopwatch = 990 + 59 * 1000 + 99 * 60000;
+
 function add_timeframe() 
 {
     mills_value = Date.now() - starting_time_mills;
@@ -40,11 +42,19 @@ function add_timeframe()
         mills.innerHTML = "0" + mills_value;
     else
         mills.innerHTML = mills_value;
+
+    const total_mills = mills_value + seconds_value * 1000 + minutes_value * 60000;
+
+    if (total_mills >= max_mills_for_stopwatch)
+    { 
+        minutes.innerHTML = "99";
+        seconds.innerHTML = "59";
+        mills.innerHTML = "99";
+        startstop.click();
+    }
 }
 
 var interval_id;
-// starting_time_mills = Date.now();
-// interval_id = setInterval(add_timeframe, 10);
 
 function start_stopwatch()
 {
