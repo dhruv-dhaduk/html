@@ -1,0 +1,1 @@
+const categories = ["Biography", "Engineering", "History", "Science", "Other"];
