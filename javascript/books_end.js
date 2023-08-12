@@ -8,6 +8,8 @@ const url = `${base}&sheet=${sheetName}&tq=${query}`;
 
 const data = [];
 
+document.addEventListener("DOMContentLoaded", init);
+
 function read_sheet()
 {
     fetch(url)
@@ -115,4 +117,24 @@ function get_list(category)
         default:
             return null;
     }
+}
+
+function init()
+{
+    read_sheet();
+
+    var loaded = false;
+
+    const itvID = setInterval(() => {
+        if (loaded)
+        {
+            clearInterval(itvID);
+        }
+        else
+        {
+            load_data();
+            if (data.length > 0)
+                loaded = true;
+        }
+    })
 }
