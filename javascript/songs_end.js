@@ -98,10 +98,10 @@ function init()
 
     var loaded = false;
 
-    setInterval(() => {
+    const itvID = setInterval(() => {
         if (loaded)
         {
-            clearInterval();
+            clearInterval(itvID);
         }
         else
         {
