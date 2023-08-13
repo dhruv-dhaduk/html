@@ -13,3 +13,15 @@ html {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
+
+@media (orientation:portrait) {
+    .thumbnail {
+        width: 70vw;
+    }
+}
+
+@media (orientation:landscape) {
+    .thumbnail {
+        width: 20vw;
+    }
+}
