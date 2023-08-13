@@ -14,6 +14,10 @@ html {
     margin-bottom: 5rem;
 }
 
+.thumbnail {
+    border-radius: 1rem;
+}
+
 @media (orientation:portrait) {
     .thumbnail {
         width: 70vw;
