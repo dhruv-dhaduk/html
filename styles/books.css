@@ -13,8 +13,9 @@ a:visited {
 }
 
 a:focus, a:hover {
-    color: white;
+    color: rgb(0, 191, 255);
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:active {
