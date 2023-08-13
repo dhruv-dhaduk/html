@@ -9,6 +9,12 @@ html {
     cursor: default;
 }
 
+.booklistpercategory {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 0;
+}
+
 .book {
     margin-top: 5rem;
     margin-bottom: 5rem;
