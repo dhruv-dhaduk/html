@@ -57,7 +57,7 @@ body {
     }
 }
 
-.thumbnail:hover, .hover-effect {
+.hover-effect {
     scale: 1.1;
     box-shadow: 0 0 0.3rem 0.3rem rgb(0, 64, 255);
     transition-duration: 500ms;

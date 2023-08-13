@@ -26,8 +26,12 @@ function load_data()
         img.src  = get_yt_thumbnail_link(r["Link"]);
         p.className = "songname";
         p.innerHTML = r["Name"];
-        img.addEventListener("mouseover", function(){
+        img.addEventListener("mouseenter", function(){
+            img.classList.add("hover-effect");
             typing_effect(p, r["Name"], i);
+        }, false);
+        img.addEventListener("mouseleave", function() {
+            img.classList.remove("hover-effect");
         }, false);
 
         img.addEventListener("touchstart", function(){
