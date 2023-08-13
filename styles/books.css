@@ -32,7 +32,7 @@ html {
     transition-duration: 500ms;
 }
 
-.thumbnail[src^="http"]:hover {
+.thumbnail[src^="http"]:hover , .hover-effect {
     scale: 1.1;
     box-shadow: 0 0 0.5rem 0.5rem blue;
 

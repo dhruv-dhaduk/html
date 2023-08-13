@@ -90,8 +90,16 @@ function load_data()
         a.href = r["link"];
         a.target = "_blank";
 
+        img.addEventListener("touchstart", function() {
+            img.classList.add("hover-effect");
+        });
+        img.addEventListener("touchend", function() {
+            img.classList.remove("hover-effect");
+        })
         img.onerror = function() {
             img.src = "../res/images/document.png";
+            var new_img = img.cloneNode(true);
+            img.parentNode.replaceChild(new_img, img);
         };
 
         lilink.append(a);
