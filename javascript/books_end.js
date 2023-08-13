@@ -90,6 +90,12 @@ function load_data()
         a.href = r["link"];
         a.target = "_blank";
 
+        img.addEventListener("mouseenter", function() {
+            img.classList.add("hover-effect");
+        })
+        img.addEventListener("mouseleave", function() {
+            img.classList.remove("hover-effect");
+        })
         img.addEventListener("touchstart", function() {
             img.classList.add("hover-effect");
         });
