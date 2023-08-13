@@ -89,12 +89,14 @@ function load_data()
 
         img.addEventListener("mouseenter", function() {
             img.classList.add("hover-effect");
+            typing_effect(h3, r["name"]);
         })
         img.addEventListener("mouseleave", function() {
             img.classList.remove("hover-effect");
         })
         img.addEventListener("touchstart", function() {
             img.classList.add("hover-effect");
+            typing_effect(h3, r["name"]);
         });
         img.addEventListener("touchend", function() {
             img.classList.remove("hover-effect");
@@ -109,6 +111,12 @@ function load_data()
             new_img.addEventListener("click", function() {
                 window.open(r["link"], "_blank");
             });
+            new_img.addEventListener("mouseenter", function() {
+                typing_effect(h3, r["name"]);
+            });
+            new_img.addEventListener("touchstart", function() {
+                typing_effect(h3, p["name"]);
+            })
         });
         
 
