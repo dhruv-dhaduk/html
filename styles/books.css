@@ -16,6 +16,15 @@ html {
 
 .thumbnail {
     border-radius: 1rem;
+
+    transition-duration: 500ms;
+}
+
+.thumbnail[src^="http"]:hover {
+    scale: 1.1;
+    box-shadow: 0 0 0.5rem 0.5rem blue;
+
+    transition-duration: 500ms;
 }
 
 @media (orientation:portrait) {
