@@ -28,21 +28,18 @@ function read_sheet()
                 }
                 catch(err){
                     timestamp = "";
-                    console.log(err);
                 }
                 try {
                     author = rowData.c[3].v;
                 }
                 catch(err){
                     author = "";
-                    console.log(err);
                 }
                 try {
                     year = rowData.c[4].v;
                 }
                 catch(err){
                     year = "";
-                    console.log(err);
                 }
                 if (timestamp.toLowerCase() != "timestamp")
                 {
