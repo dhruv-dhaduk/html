@@ -110,6 +110,10 @@ a:active {
     white-space: nowrap;
 }
 
+.bookdata > li {
+    margin-bottom: 0.2rem;
+}
+
 @media (orientation:portrait) {
     .thumbnail, .bookdata {
         width: 70vw;
