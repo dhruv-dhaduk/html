@@ -9,7 +9,6 @@ function typing_effect(e, text)
     {
         clearInterval(interval_id);
         e_ineffect.innerHTML = text_ineffect;
-        console.log("forced end : " + text_ineffect);
     }
     
     in_effect = true;
@@ -17,7 +16,6 @@ function typing_effect(e, text)
     e_ineffect = e;
     text_ineffect = text;
     
-    console.log("start effect : " + text);
     const l = text.length;
     if (l < 1)
         return;
@@ -37,7 +35,6 @@ function typing_effect(e, text)
         else
         {
             clearInterval(interval_id);
-            console.log("end effect : " + text + ", index : " + i);
             in_effect = false;
         }
     }, interval_time);
