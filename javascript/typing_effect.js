@@ -1,28 +1,28 @@
 var in_effect = false;
 var interval_id;
 var e_ineffect;
-var name_ineffect;
+var text_ineffect;
 
-function typing_effect(e, name)
+function typing_effect(e, text)
 {   
     if (in_effect)
     {
         clearInterval(interval_id);
-        e_ineffect.innerHTML = name_ineffect;
-        console.log("forced end : " + name_ineffect);
+        e_ineffect.innerHTML = text_ineffect;
+        console.log("forced end : " + text_ineffect);
     }
     
     in_effect = true;
 
     e_ineffect = e;
-    name_ineffect = name;
+    text_ineffect = text;
     
-    console.log("start effect : " + name);
-    const l = name.length;
+    console.log("start effect : " + text);
+    const l = text.length;
     if (l < 1)
         return;
 
-    e.innerHTML = name.charAt(0);
+    e.innerHTML = text.charAt(0);
 
     const interval_time = 35;
 
@@ -31,13 +31,13 @@ function typing_effect(e, name)
     interval_id = setInterval(() => {
         if (i < l)
         {
-            e.innerHTML += name.charAt(i);
+            e.innerHTML += text.charAt(i);
             i++;
         }
         else
         {
             clearInterval(interval_id);
-            console.log("end effect : " + name + ", index : " + i);
+            console.log("end effect : " + text + ", index : " + i);
             in_effect = false;
         }
     }, interval_time);
