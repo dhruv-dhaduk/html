@@ -9,6 +9,10 @@ html {
     cursor: default;
 }
 
+.category{
+    text-align: center;
+}
+
 .booklistpercategory {
     list-style-position: inside;
     list-style-type: none;
@@ -35,20 +39,25 @@ html {
     transition-duration: 500ms;
 }
 
+.bookdata {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 0;
+
+    margin: auto;
+    text-align: start;
+    overflow-x: visible;
+    white-space: nowrap;
+}
+
 @media (orientation:portrait) {
-    .thumbnail {
+    .thumbnail, .bookdata {
         width: 70vw;
     }
 }
 
 @media (orientation:landscape) {
-    .thumbnail {
+    .thumbnail, .bookdata {
         width: 20vw;
     }
-}
-
-.bookdata {
-    list-style-position: inside;
-    list-style-type: none;
-    padding: 0;
 }
