@@ -4,6 +4,24 @@ html {
     font-family: Helvetica, sans-serif;
 }
 
+a {
+    color: white;
+}
+
+a:visited {
+    color: rgb(200, 200, 200);
+}
+
+a:focus, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    color: red;
+    text-decoration: none;
+}
+
 .heading {
     text-align: center;
     cursor: default;
