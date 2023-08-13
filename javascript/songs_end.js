@@ -90,7 +90,6 @@ function read_sheet() {
                     }
                 }
                 catch(err) {
-                    console.log(err)
                 }
             })
         });
