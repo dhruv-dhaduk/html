@@ -99,16 +99,17 @@ function load_data()
         img.addEventListener("touchend", function() {
             img.classList.remove("hover-effect");
         })
-        var redirect_to_file = function() {
+        img.addEventListener("click", function() {
             window.open(r["link"], "_blank");
-        };
-        img.addEventListener("click", redirect_to_file);
-        img.onerror = function() {
+        });
+        img.addEventListener("error", function() {
             img.src = "../res/images/document.png";
             var new_img = img.cloneNode(true);
             img.parentNode.replaceChild(new_img, img);
-            new_img.addEventListener("click", redirect_to_file);
-        };
+            new_img.addEventListener("click", function() {
+                window.open(r["link"], "_blank");
+            });
+        });
         
 
         lilink.append(a);
