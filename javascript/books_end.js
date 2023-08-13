@@ -89,6 +89,10 @@ function load_data()
         a.href = r["link"];
         a.target = "_blank";
 
+        img.onerror = function() {
+            img.src = "../res/images/document.png";
+        };
+
         lilink.append(a);
         ulbookdata.append(liauthor);
         ulbookdata.append(liyear);
