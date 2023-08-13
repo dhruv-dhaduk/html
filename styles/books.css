@@ -34,6 +34,27 @@ a:active {
     background-position: right;
 }
 
+.download {
+    display: inline-block;
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 0.5em;
+
+    line-height: 2;
+    
+    padding-left: 2em;
+    padding-right: 0.5em;
+    background-image: url("../res/logos/black/download_black.png");
+    background-size: 1.2em;
+    background-repeat: no-repeat;
+    background-position: 0.4em center;
+}
+.download:visited, .download:focus, .download:hover, .download:active {
+    color: black;
+}
+
 .heading {
     text-align: center;
     cursor: default;
