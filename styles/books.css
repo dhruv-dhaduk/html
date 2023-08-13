@@ -23,6 +23,20 @@ a:active {
     text-decoration: none;
 }
 
+.index {
+    text-align: center;
+}
+
+.index > ul{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem ;
+}
+
+.index > ul > li {
+    line-height: 1.5;
+}
+
 .googleformlink > a {
     padding-right: 1.2em;
     margin-right: 0.1em;
