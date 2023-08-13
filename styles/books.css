@@ -141,8 +141,6 @@ a:active {
 
     margin: auto;
     text-align: start;
-    overflow-x: visible;
-    white-space: nowrap;
 }
 
 .bookdata > li {
