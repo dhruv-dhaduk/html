@@ -50,9 +50,17 @@ a:active {
     background-size: 1.2em;
     background-repeat: no-repeat;
     background-position: 0.4em center;
+
+    transition-duration: 500ms;
 }
 .download:visited, .download:focus, .download:hover, .download:active {
     color: black;
+}
+
+.download:hover {
+    scale: 1.1;
+
+    transition-duration: 500ms;
 }
 
 .heading {
