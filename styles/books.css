@@ -13,6 +13,8 @@ html {
     list-style-position: inside;
     list-style-type: none;
     padding: 0;
+
+    text-align: center;
 }
 
 .book {
