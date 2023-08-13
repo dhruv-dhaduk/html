@@ -28,7 +28,7 @@ function load_data()
         p.innerHTML = r["Name"];
         img.addEventListener("mouseenter", function(){
             img.classList.add("hover-effect");
-            typing_effect(p, r["Name"], i);
+            typing_effect(p, r["Name"]);
         }, false);
         img.addEventListener("mouseleave", function() {
             img.classList.remove("hover-effect");
@@ -36,7 +36,7 @@ function load_data()
 
         img.addEventListener("touchstart", function(){
             img.classList.add("hover-effect");
-            typing_effect(p, r["Name"], i);
+            typing_effect(p, r["Name"]);
         }, false);
 
         img.addEventListener("touchend", function(){
