@@ -44,3 +44,9 @@ html {
         width: 20vw;
     }
 }
+
+.bookdata {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 0;
+}
