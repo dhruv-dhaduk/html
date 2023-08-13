@@ -79,6 +79,7 @@ function load_data()
         const a = document.createElement("a");
 
         li.className = "book";
+        img.className = "thumbnail";
         img.src = gdrive_file_thumbnail(r["link"]);
         h3.className = "bookname";
         h3.innerHTML = r["name"];
