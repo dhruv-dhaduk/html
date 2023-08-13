@@ -115,8 +115,8 @@ function load_data()
                 typing_effect(h3, r["name"]);
             });
             new_img.addEventListener("touchstart", function() {
-                typing_effect(h3, p["name"]);
-            })
+                typing_effect(h3, r["name"]);
+            });
         });
         
 
