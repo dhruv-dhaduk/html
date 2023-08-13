@@ -23,6 +23,17 @@ a:active {
     text-decoration: none;
 }
 
+.googleformlink > a {
+    padding-right: 1.2em;
+    margin-right: 0.1em;
+    margin-left: 0.1em;
+
+    background-image: url("../res/logos/white/redirect_white.png");
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: right;
+}
+
 .heading {
     text-align: center;
     cursor: default;
