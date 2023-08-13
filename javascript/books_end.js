@@ -83,6 +83,7 @@ function load_data()
         ulbookdata.className = "bookdata";
         liauthor.innerHTML = "<b>Author</b> : " + r["author"];
         liyear.innerHTML = "<b>Publication Year</b> : " + r["year"];
+        a.className = "download";
         a.innerHTML = "Download";
         a.href = r["link"];
         a.target = "_blank";
