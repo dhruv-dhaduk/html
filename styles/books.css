@@ -28,6 +28,7 @@ html {
 
 .thumbnail {
     border-radius: 1rem;
+    cursor: pointer;
 
     transition-duration: 500ms;
 }
