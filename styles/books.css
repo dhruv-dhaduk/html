@@ -72,6 +72,10 @@ a:active {
     text-align: center;
 }
 
+.category-heading {
+    margin-bottom: 8rem;
+}
+
 .booklistpercategory {
     list-style-position: inside;
     list-style-type: none;
