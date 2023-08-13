@@ -74,6 +74,23 @@ a:active {
 
 .category-heading {
     margin-bottom: 8rem;
+
+    color: white;
+}
+
+.category > a {
+    text-decoration: none;
+}
+
+.category >  a:visited, .category > a:hover, .category > a:active, .category > a:focus {
+    color: white;
+}
+
+.category-heading:hover {
+    color: rgb(0, 191, 255);
+    text-decoration: underline;
+    
+    transition-duration: 500ms;
 }
 
 .booklistpercategory {
