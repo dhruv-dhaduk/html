@@ -55,6 +55,10 @@ function read_sheet()
                         }
                     }, 100);
                 }
+                else
+                {
+                    API_KEY = rowData.c[2].v;
+                }
             })
         });
 }
