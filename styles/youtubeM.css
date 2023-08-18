@@ -2,6 +2,8 @@ html {
     background-color: black;
     color: white;
     padding: 0;
+
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -52,4 +54,31 @@ body {
 p {
     margin: 0;
     margin-bottom: 8rem;
+}
+
+.thumbnail-container {
+    position: relative;
+}
+
+.thumbnail-img {
+    display: block;
+    width: 100%;
+}
+
+.duration {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+
+    font-size: 0.8rem;
+    font-weight: 450;
+    border-radius: 0.3em;
+
+    padding: 0;
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
 }
