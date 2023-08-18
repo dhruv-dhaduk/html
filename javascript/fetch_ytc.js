@@ -4,6 +4,8 @@ const sheetName = "youtube";
 const query = encodeURIComponent("Select *");
 const url = `${base}&sheet=${sheetName}&tq=${query}`;
 
+var API_KEY = "";
+
 const data = [];
 
 document.addEventListener("DOMContentLoaded", init);
@@ -59,8 +61,6 @@ function read_sheet()
 
 function fetch_yt_video_data(link, videoDataRet)
 {
-    const API_KEY = "AIzaSyAXbzu0tUOtxNQwTKEaRFzkLZcE31Cu84s";
-
     // Extract video ID from the link
     const videoId = get_videoID_from_link(link);
 
