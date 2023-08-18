@@ -4,11 +4,13 @@ const sheetName = "youtube";
 const query = encodeURIComponent("Select *");
 const url = `${base}&sheet=${sheetName}&tq=${query}`;
 
+// const e = document.getElementById("errors");
+
 var API_KEY = "";
 
 const data = [];
 
-document.addEventListener("DOMContentLoaded", init);
+// document.addEventListener("DOMContentLoaded", init);
 
 function init()
 {
@@ -18,7 +20,7 @@ function init()
         if (data.length > 0)
         {
             shuffle(data);
-            console.log(data);
+            load_data();
             API_KEY = "";
             sheetId = "";
             clearInterval(itvID);

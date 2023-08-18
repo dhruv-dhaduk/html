@@ -1,4 +1,9 @@
-if(!isMobileDevice())
+// if(!isMobileDevice())
+// {
+//     window.location.href = "youtube.html";
+// }
+
+function load_data()
 {
-    window.location.href = "youtube.html";
+    
 }
