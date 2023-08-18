@@ -1,3 +1,27 @@
+const sheetId = "1xTdT1nE-vP_P3iG7sE1WCkGzr9U-vILrwah0D_iiEZ4";
+const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
+const sheetName = "youtube";
+const query = encodeURIComponent("Select *");
+const url = `${base}&sheet=${sheetName}&tq=${query}`;
+
+const data = [];
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init()
+{
+    read_sheet();
+
+    const itvID = setInterval(() => {
+        if (data.length > 0)
+        {
+            shuffleArray(data);
+            console.log(data);
+            clearInterval(itvID);
+        }
+    });
+}
+
 function read_sheet()
 {
     fetch(url)
