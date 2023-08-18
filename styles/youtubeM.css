@@ -82,3 +82,16 @@ p {
     padding-left: 0.5ch;
     padding-right: 0.5ch;
 }
+
+.video-item-info {
+    background-color: #404040;
+    padding: 0.8rem;
+    padding-right: 0;
+    margin-bottom: 0.6rem;
+}
+
+.channel-icon {
+    border-radius: 50%;
+    height: 2.5rem;
+    margin: 0;
+}
