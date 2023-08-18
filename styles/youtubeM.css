@@ -41,3 +41,9 @@ body {
     margin-bottom: auto;
 
 }
+
+.video-list {
+    /* background-color: #404040; */
+    height: calc(100vh - 3rem);
+    overflow-y: scroll;
+}
