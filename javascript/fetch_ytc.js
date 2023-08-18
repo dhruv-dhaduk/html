@@ -1,4 +1,4 @@
-const sheetId = "1xTdT1nE-vP_P3iG7sE1WCkGzr9U-vILrwah0D_iiEZ4";
+var sheetId = "1xTdT1nE-vP_P3iG7sE1WCkGzr9U-vILrwah0D_iiEZ4";
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
 const sheetName = "youtube";
 const query = encodeURIComponent("Select *");
@@ -20,6 +20,7 @@ function init()
             shuffle(data);
             console.log(data);
             API_KEY = "";
+            sheetId = "";
             clearInterval(itvID);
         }
     });
