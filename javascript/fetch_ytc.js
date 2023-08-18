@@ -19,6 +19,7 @@ function init()
         {
             shuffle(data);
             console.log(data);
+            API_KEY = "";
             clearInterval(itvID);
         }
     });
