@@ -14,3 +14,19 @@ function get_videoID_from_link(link)
         return null;
     }
 }
+
+function convertDurationToHMS(duration) {
+    const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+    const hours = (parseInt(match[1]) || 0);
+    const minutes = (parseInt(match[2]) || 0);
+    const seconds = (parseInt(match[3]) || 0);
+
+    if (hours == 0)
+    {
+        return `${minutes.toString()}:${seconds.toString().padStart(2, '0')}`;
+    }
+    else
+    {
+        return `${hours.toString()}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+}
