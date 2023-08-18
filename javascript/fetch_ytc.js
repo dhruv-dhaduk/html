@@ -15,7 +15,7 @@ function init()
     const itvID = setInterval(() => {
         if (data.length > 0)
         {
-            shuffleArray(data);
+            shuffle(data);
             console.log(data);
             clearInterval(itvID);
         }
