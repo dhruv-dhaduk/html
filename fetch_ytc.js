@@ -1,3 +1,38 @@
+function read_sheet()
+{
+    fetch(url)
+        .then(res => res.text())
+        .then(rep => {
+            //Remove additional text and extract only JSON:
+            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+
+            jsonData.table.rows.forEach((rowData) => {
+                var timestamp, link;
+                link = rowData.c[1].v;
+                try {
+                    timestamp = rowData.c[0].v;
+                }
+                catch(err){
+                    timestamp = "";
+                }
+                if (timestamp.toLowerCase() != "timestamp")
+                {
+                    const r = {};
+                    r["link"] = link;
+                    r["status"] = "fetching";
+                    fetch_yt_video_data(link, r);
+                    const itvID = setInterval(() => {
+                        if (r["status"] == "done" || r["status"] == "failed")
+                        {
+                            data.push(r);
+                            clearInterval(itvID);
+                        }
+                    }, 100);
+                }
+            })
+        });
+}
+
 function fetch_yt_video_data(link, videoDataRet)
 {
     const API_KEY = "AIzaSyAXbzu0tUOtxNQwTKEaRFzkLZcE31Cu84s";
