@@ -270,8 +270,3 @@ const x = [
       "subscriberCount": "185000"
     }
 ];
-
-function load_data()
-{
-    
-}
