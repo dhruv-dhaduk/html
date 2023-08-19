@@ -6,21 +6,24 @@ const url = `${base}&sheet=${sheetName}&tq=${query}`;
 
 // const e = document.getElementById("errors");
 
-var API_KEY = "";
+const API_KEY_LIST = [];
 
 const data = [];
 
-// document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init);
+
+var data_length = -1;
 
 function init()
 {
     read_sheet();
 
     const itvID = setInterval(() => {
-        if (data.length > 0)
+        if (data.length == data_length)
         {
             shuffle(data);
-            load_data();
+            // load_data();
+            console.log(data);
             API_KEY = "";
             sheetId = "";
             clearInterval(itvID);
@@ -35,8 +38,12 @@ function read_sheet()
         .then(rep => {
             //Remove additional text and extract only JSON:
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+            data_length = jsonData.table.rows.length - 1;
+            console.log(data_length);
 
             jsonData.table.rows.forEach((rowData) => {
+                if (data_length < 0)
+                    return;
                 var timestamp, link;
                 link = rowData.c[1].v;
                 try {
@@ -49,25 +56,68 @@ function read_sheet()
                 {
                     const r = {};
                     r["link"] = link;
-                    r["status"] = "fetching";
-                    fetch_yt_video_data(link, r);
+                    var key_index = 0;
+                    var key = "";
+                    if (key_index < API_KEY_LIST.length)
+                    {
+                        key = API_KEY_LIST[key_index];
+                        r["status"] = "fetching";
+                        fetch_yt_video_data(link, r, key);
+                    }
+                    else
+                    {
+                        r["status"] = "keyerror";
+                        data.push(r);
+                        return;
+                    }
+
                     const itvID = setInterval(() => {
                         if (r["status"] == "done" || r["status"] == "failed")
                         {
                             data.push(r);
                             clearInterval(itvID);
                         }
+                        else if (r["status"] == "keyerror")
+                        {
+                            key_index++;
+                            if (key_index < API_KEY_LIST.length)
+                            {
+                                key = API_KEY_LIST[key_index];
+                                r["status"] = "fetching";
+                                fetch_yt_video_data(link, r, key);
+                            }
+                            else
+                            {
+                                r["status"] = "keyerror";
+                                data.push(r);
+                                clearInterval(itvID);
+                            }
+                        }
                     }, 100);
                 }
                 else
                 {
-                    API_KEY = rowData.c[2].v;
+                    var i = 2;
+                    while (true)
+                    {
+                        const k = rowData.c[i].v;
+                        if (k == "x")
+                            break;
+                        API_KEY_LIST.push(k);
+                        i++;
+                    }
+
+                    for (var i = 0; i < API_KEY_LIST.length; i++)
+                    {
+                        console.log("k = " + API_KEY_LIST[i]);
+                    }
+                    
                 }
             })
         });
 }
 
-function fetch_yt_video_data(link, videoDataRet)
+function fetch_yt_video_data(link, videoDataRet, API_KEY)
 {
     // Extract video ID from the link
     const videoId = get_videoID_from_link(link);
@@ -75,11 +125,22 @@ function fetch_yt_video_data(link, videoDataRet)
     // Construct the API endpoint URL
     const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet,contentDetails&id=${videoId}&key=${API_KEY}`;
 
+    videoDataRet["apiKey"] = API_KEY;
+
     fetch(videoUrl)
-    .then(response => response.json())
+    .then(response => {
+        if (response.status != 200)
+            return null;
+        return response.json();
+    })
     .then(videoData => {
+        if (videoData == null)
+        {
+            videoDataRet["status"] = "keyerror";
+            return null;
+        }
         const video = videoData.items[0];
-        // console.log(video.contentDetails);
+        // console.log("A" + response.status);
         const snippet = video.snippet;
         const statistics = video.statistics;
 
@@ -107,8 +168,18 @@ function fetch_yt_video_data(link, videoDataRet)
 
         // Make the API request for channel details
         fetch(channelUrl)
-        .then(response => response.json())
+        .then(response => {
+            if (response.status != 200)
+                return null;
+            return response.json();
+        })
         .then(channelData => {
+            if (channelData == null)
+            {
+                videoDataRet["status"] = "keyerror";
+                return null;
+            }
+            // console.log("B" + response.status)
             const channel = channelData.items[0];
             const channelIcon = channel.snippet.thumbnails.default.url;
             const subscriberCount = channel.statistics.subscriberCount;
