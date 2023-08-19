@@ -1,6 +1,6 @@
 if(!isMobileDevice())
 {
-    window.location.href = "youtube.html";
+    // window.location.href = "youtube.html";
 }
 
 const x = [
