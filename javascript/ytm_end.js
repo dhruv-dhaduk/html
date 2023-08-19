@@ -42,7 +42,7 @@ function load_data()
                     video_title.className = "video-title";
                     video_title.innerHTML = r["videoTitle"];
                     additional_data.className = "video-additional-data";
-                    additional_data.innerHTML = r["channelTitle"] + middle_dot + r["viewCount"] + " views" + middle_dot + r["uploadTime"];
+                    additional_data.innerHTML = r["channelTitle"] + middle_dot + convert_views_format(r["viewCount"]) + middle_dot + convert_upload_time_format(r["uploadTime"]);
                 three_dots.className = "video-three-dots";
                 three_dots.src = "../res/logos/white/three_dots_white.png";
 

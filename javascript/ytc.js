@@ -30,3 +30,20 @@ function convertDurationToHMS(duration) {
         return `${hours.toString()}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 }
+
+function convert_views_format(viewCount)
+{
+    if (viewCount >= 1000000000)
+        return (parseInt(viewCount / 100000000) / 10).toString() + "B views";
+    else if (viewCount >= 1000000)
+        return (parseInt(viewCount / 100000) / 10).toString() + "M views";
+    else if (viewCount >= 1000)
+        return (parseInt(viewCount / 100) / 10).toString() + "K views";
+    else
+        return viewCount.toString() + " views";
+}
+
+function convert_upload_time_format(uploadTime)
+{
+    return uploadTime.toString();
+}
