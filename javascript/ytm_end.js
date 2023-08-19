@@ -60,15 +60,21 @@ function load_data()
     document.getElementById("loading").style.display = "none";
 }
 
+var shuffleITV = 0;
+
 function shuffleVideoItems()
 {
     shuffle(data);
     const list = document.getElementById("video-list");
     list.innerHTML = "";
 
-    for (r of data)
-    {
-        if (r["status"] == "done")
-            list.append(r["htmlItem"]);
-    }
+    clearInterval(shuffleITV);
+    var i = 0;
+    shuffleITV = setInterval(() => {
+        if (i >= data.length)
+            clearInterval(shuffleITV);
+        if (data[i]["status"] == "done")
+            list.append(data[i]["htmlItem"]);
+        i++;
+    }, 200);
 }
