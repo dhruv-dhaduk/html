@@ -67,6 +67,7 @@ function shuffleVideoItems()
 
     for (r of data)
     {
-        list.append(r["htmlItem"]);
+        if (r["status"] == "done")
+            list.append(r["htmlItem"]);
     }
 }
