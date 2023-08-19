@@ -1,7 +1,7 @@
-// if(!isMobileDevice())
-// {
-//     window.location.href = "youtube.html";
-// }
+if(!isMobileDevice())
+{
+    window.location.href = "youtube.html";
+}
 
 const x = [
     {
