@@ -52,12 +52,11 @@ function load_data()
         container.append(thumb_container);
         container.append(video_item_info);
 
-        list.append(container);
-
         r["htmlItem"] = container;
     }
 
     document.getElementById("loading").style.display = "none";
+    shuffleVideoItems();
 }
 
 var shuffleITV = 0;

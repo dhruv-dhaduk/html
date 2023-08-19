@@ -21,7 +21,6 @@ function init()
     const itvID = setInterval(() => {
         if (data.length == data_length)
         {
-            shuffle(data);
             load_data();
             API_KEY = "";
             sheetId = "";
