@@ -13,6 +13,10 @@ body {
     overflow: hidden;
 }
 
+img {
+    pointer-events: none;
+}
+
 .header {
     background-color: black;
     width: 100vw;
