@@ -4,6 +4,10 @@ document.getElementById("heading").addEventListener("click", shuffleVideoItems);
 
 function load_data()
 {
+    // for (r of x)
+    // {
+    //     data.push(r);
+    // }
     const middle_dot = " <span class=\"dot\">&#183</span> ";
     const list = document.getElementById("video-list");
 
@@ -59,7 +63,7 @@ function load_data()
     shuffleVideoItems();
 }
 
-var shuffleITV = 0;
+var shuffleITV;
 
 function shuffleVideoItems()
 {
