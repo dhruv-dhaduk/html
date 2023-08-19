@@ -18,7 +18,7 @@ function load_data()
     const middle_dot = " <span class=\"dot\">&#183</span> ";
     const list = document.getElementById("video-list");
 
-    for (r of data) 
+    for (const r of data) 
     {
         r["apiKey"] = "";
         if (r["status"] != "done"){
@@ -47,6 +47,7 @@ function load_data()
                 channel_icon.className =  "channel-icon";
                 channel_icon.src = r["channelIcon"];
                 channel_icon.addEventListener("contextmenu",function(e) { e.preventDefault(); });
+                channel_icon.addEventListener("click", function() { window.open(r["channelLink"], "_blank"); });
                 video_item_texts.className = "video-item-texts";
                     video_title.className = "video-title";
                     video_title.innerHTML = r["videoTitle"];
@@ -55,6 +56,7 @@ function load_data()
                 three_dots.className = "video-three-dots";
                 three_dots.src = "../res/logos/white/three_dots_white.png";
                 three_dots.addEventListener("contextmenu", function(e) { e.preventDefault(); });
+                three_dots.addEventListener("click", function() { window.open(r["link"], "_blank"); });
 
         video_item_texts.append(video_title);
         video_item_texts.append(additional_data);
@@ -78,7 +80,7 @@ var shuffleITV;
 
 function shuffleVideoItems()
 {
-    shuffle(data);
+    // shuffle(data);
     const list = document.getElementById("video-list");
     list.innerHTML = "";
 
