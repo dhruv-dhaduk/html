@@ -23,7 +23,6 @@ function init()
         {
             shuffle(data);
             load_data();
-            console.log(data);
             API_KEY = "";
             sheetId = "";
             clearInterval(itvID);
@@ -39,7 +38,6 @@ function read_sheet()
             //Remove additional text and extract only JSON:
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
             data_length = jsonData.table.rows.length - 1;
-            console.log(data_length);
 
             jsonData.table.rows.forEach((rowData) => {
                 if (data_length < 0)
@@ -106,11 +104,6 @@ function read_sheet()
                         API_KEY_LIST.push(k);
                         i++;
                     }
-
-                    for (var i = 0; i < API_KEY_LIST.length; i++)
-                    {
-                        console.log("k = " + API_KEY_LIST[i]);
-                    }
                     
                 }
             })
@@ -140,7 +133,6 @@ function fetch_yt_video_data(link, videoDataRet, API_KEY)
             return null;
         }
         const video = videoData.items[0];
-        // console.log("A" + response.status);
         const snippet = video.snippet;
         const statistics = video.statistics;
 
@@ -179,7 +171,6 @@ function fetch_yt_video_data(link, videoDataRet, API_KEY)
                 videoDataRet["status"] = "keyerror";
                 return null;
             }
-            // console.log("B" + response.status)
             const channel = channelData.items[0];
             const channelIcon = channel.snippet.thumbnails.default.url;
             const subscriberCount = channel.statistics.subscriberCount;
