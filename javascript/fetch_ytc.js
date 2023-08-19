@@ -4,8 +4,6 @@ const sheetName = "youtube";
 const query = encodeURIComponent("Select *");
 const url = `${base}&sheet=${sheetName}&tq=${query}`;
 
-// const e = document.getElementById("errors");
-
 const API_KEY_LIST = [];
 
 const data = [];

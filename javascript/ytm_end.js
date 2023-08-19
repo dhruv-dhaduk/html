@@ -1,6 +1,10 @@
 // document.addEventListener("DOMContentLoaded", load_data());
 
-document.getElementById("heading").addEventListener("click", shuffleVideoItems);
+document.getElementById("heading").addEventListener("click",function() {
+    console.log("CLK");
+    clear_video();
+    shuffleVideoItems();
+});
 
 const imgs = document.getElementsByTagName("img");
 for (ele of imgs)
@@ -41,6 +45,7 @@ function load_data()
                 thumbnail.className = "thumbnail-img";
                 thumbnail.src = r["thumbnail"];
                 thumbnail.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
+                thumbnail.addEventListener("click", function() { play_video(r); });
                 duration.className = "duration";
                 duration.innerHTML = r["duration"];
             video_item_info.className = "video-item-info";
@@ -80,7 +85,7 @@ var shuffleITV;
 
 function shuffleVideoItems()
 {
-    // shuffle(data);
+    shuffle(data);
     const list = document.getElementById("video-list");
     list.innerHTML = "";
 

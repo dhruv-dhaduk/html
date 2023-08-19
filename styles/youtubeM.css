@@ -59,7 +59,7 @@ body {
 }
 
 .video-feed {
-    height: calc(100vh - 3rem - 0.5625*100vw);
+    height: calc(100vh - 3rem);
     overflow-y: scroll;
 }
 
