@@ -44,6 +44,60 @@ function convert_views_format(viewCount)
 }
 
 function convert_upload_time_format(uploadTime)
-{
-    return uploadTime.toString();
+{   
+    const d = new Date(uploadTime);
+    const timeDiff = (Date.now() - d) / 1000;
+    
+    if (timeDiff >= 31536000)
+    {
+        const years = parseInt(timeDiff / 31536000);
+        if (years > 1)
+            return years + " years ago";
+        else
+            return years + " year ago";
+    }
+    else if (timeDiff >= 2592000)
+    {
+        const months = parseInt(timeDiff / 2592000);
+        if (months > 1)
+            return months + " months ago";
+        else
+            return months + " month ago";
+    }
+    else if (timeDiff >= 604800)
+    {
+        const weeks = parseInt(timeDiff / 604800);
+        if (weeks > 1)
+            return weeks + " weeks ago";
+        else 
+            return weeks + " week ago";
+    }
+    else if (timeDiff >= 86400)
+    {
+        const days = parseInt(timeDiff / 86400);
+        if (days > 1)
+            return days + " days ago";
+        else 
+            return days + " day ago";
+    }
+    else if (timeDiff >= 3600)
+    {
+        const hours = parseInt(timeDiff / 3600);
+        if (hours > 1)
+            return hours + " hours ago";
+        else 
+            return hours + " hour ago";
+    }
+    else if (timeDiff > 60)
+    {
+        const mins = parseInt(timeDiff / 60);
+        if (mins > 1)
+            return mins + " minutes ago";
+        else
+            return mins + " minute ago";
+    }
+    else
+    {
+        return "just now";
+    }
 }
