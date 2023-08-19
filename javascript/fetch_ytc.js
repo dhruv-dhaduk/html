@@ -37,11 +37,19 @@ function read_sheet()
         .then(rep => {
             //Remove additional text and extract only JSON:
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-            data_length = jsonData.table.rows.length - 1;
+            data_length = jsonData.table.rows.length;
 
             jsonData.table.rows.forEach((rowData) => {
-                if (data_length < 0)
-                    return;
+                var key = "";
+                try {
+                    key = rowData.c[2].v;
+                }
+                catch(err){ }
+                if (key != "")
+                    API_KEY_LIST.push(key);
+            });
+
+            jsonData.table.rows.forEach((rowData) => {
                 var timestamp, link;
                 link = rowData.c[1].v;
                 try {
@@ -92,19 +100,6 @@ function read_sheet()
                             }
                         }
                     }, 100);
-                }
-                else
-                {
-                    var i = 2;
-                    while (true)
-                    {
-                        const k = rowData.c[i].v;
-                        if (k == "x")
-                            break;
-                        API_KEY_LIST.push(k);
-                        i++;
-                    }
-                    
                 }
             })
         });

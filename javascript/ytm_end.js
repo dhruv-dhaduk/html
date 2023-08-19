@@ -70,8 +70,10 @@ function shuffleVideoItems()
     clearInterval(shuffleITV);
     var i = 0;
     shuffleITV = setInterval(() => {
-        if (i >= data.length)
+        if (i >= data.length){
             clearInterval(shuffleITV);
+            return;
+        }
         if (data[i]["status"] == "done")
             list.append(data[i]["htmlItem"]);
         i++;
