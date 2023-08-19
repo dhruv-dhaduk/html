@@ -53,9 +53,4 @@ function load_data()
         list.append(container);
 
     }
-
-    const footer = document.createElement("p");
-    footer.className = "footer";
-    footer.innerHTML = middle_dot;
-    list.append(footer);
 }

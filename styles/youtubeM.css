@@ -46,7 +46,7 @@ body {
 
 }
 
-.video-list {
+.video-feed {
     height: calc(100vh - 3rem);
     overflow-y: scroll;
 }
