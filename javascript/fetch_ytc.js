@@ -22,7 +22,7 @@ function init()
         if (data.length == data_length)
         {
             shuffle(data);
-            // load_data();
+            load_data();
             console.log(data);
             API_KEY = "";
             sheetId = "";

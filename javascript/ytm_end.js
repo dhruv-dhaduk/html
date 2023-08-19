@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", load_data());
+// document.addEventListener("DOMContentLoaded", load_data());
 
+document.getElementById("heading").addEventListener("click", shuffleVideoItems);
 
 function load_data()
 {
     const middle_dot = " <span class=\"dot\">&#183</span> ";
     const list = document.getElementById("video-list");
 
-    for (r of x) 
+    for (r of data) 
     {
         if (r["status"] != "done"){
             continue;
@@ -52,5 +53,20 @@ function load_data()
 
         list.append(container);
 
+        r["htmlItem"] = container;
+    }
+
+    document.getElementById("loading").style.display = "none";
+}
+
+function shuffleVideoItems()
+{
+    shuffle(data);
+    const list = document.getElementById("video-list");
+    list.innerHTML = "";
+
+    for (r of data)
+    {
+        list.append(r["htmlItem"]);
     }
 }

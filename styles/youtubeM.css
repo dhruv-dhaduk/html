@@ -152,6 +152,12 @@ body {
 
 }
 
+.loading {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
 .footer {
     margin: 0;
     margin-top: 2rem;
