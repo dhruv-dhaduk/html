@@ -2,12 +2,19 @@
 
 document.getElementById("heading").addEventListener("click", shuffleVideoItems);
 
+const imgs = document.getElementsByTagName("img");
+for (ele of imgs)
+{
+    ele.addEventListener("contextmenu", function(e) { e.preventDefault(); });
+}
+
 function load_data()
 {
     // for (r of x)
     // {
     //     data.push(r);
     // }
+
     const middle_dot = " <span class=\"dot\">&#183</span> ";
     const list = document.getElementById("video-list");
 
@@ -33,11 +40,13 @@ function load_data()
             thumb_container.className = "thumbnail-container";
                 thumbnail.className = "thumbnail-img";
                 thumbnail.src = r["thumbnail"];
+                thumbnail.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
                 duration.className = "duration";
                 duration.innerHTML = r["duration"];
             video_item_info.className = "video-item-info";
                 channel_icon.className =  "channel-icon";
                 channel_icon.src = r["channelIcon"];
+                channel_icon.addEventListener("contextmenu",function(e) { e.preventDefault(); });
                 video_item_texts.className = "video-item-texts";
                     video_title.className = "video-title";
                     video_title.innerHTML = r["videoTitle"];
@@ -45,6 +54,7 @@ function load_data()
                     additional_data.innerHTML = r["channelTitle"] + middle_dot + convert_views_format(r["viewCount"]) + middle_dot + convert_upload_time_format(r["uploadTime"]);
                 three_dots.className = "video-three-dots";
                 three_dots.src = "../res/logos/white/three_dots_white.png";
+                three_dots.addEventListener("contextmenu", function(e) { e.preventDefault(); });
 
         video_item_texts.append(video_title);
         video_item_texts.append(additional_data);
@@ -59,6 +69,7 @@ function load_data()
         r["htmlItem"] = container;
     }
 
+    
     document.getElementById("loading").style.display = "none";
     shuffleVideoItems();
 }
