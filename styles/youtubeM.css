@@ -17,6 +17,10 @@ img {
     pointer-events: none;
 }
 
+p {
+    user-select: none;
+}
+
 .header {
     background-color: black;
     width: 100vw;
