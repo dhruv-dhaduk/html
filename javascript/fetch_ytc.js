@@ -25,6 +25,7 @@ function init()
             load_data();
             API_KEY = "";
             sheetId = "";
+            while (API_KEY_LIST.length) API_KEY_LIST.pop();
             clearInterval(itvID);
         }
     });

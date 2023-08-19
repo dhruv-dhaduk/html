@@ -9,6 +9,7 @@ function load_data()
 
     for (r of data) 
     {
+        r["apiKey"] = "";
         if (r["status"] != "done"){
             continue;
         }
