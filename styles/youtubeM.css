@@ -13,6 +13,10 @@ body {
     overflow-y: hidden;
 }
 
+button, img {
+    cursor: pointer;
+}
+
 p {
     margin: 0;
 }
