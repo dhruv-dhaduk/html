@@ -14,7 +14,7 @@ for (ele of imgs)
 
 function load_data()
 {
-    // for (r of x)
+    // for (r of hardCodedData)
     // {
     //     data.push(r);
     // }
