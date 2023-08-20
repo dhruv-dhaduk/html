@@ -20,8 +20,9 @@ function play_video(videoData)
 	setTimeout(() => {
 		document.getElementById("heading").addEventListener("click",function() {
 			clear_video();
-			shuffleVideoItems();
+			refreshVideoList(true);
 		});
+		refreshVideoList(false);
 	}, 500);
 }
 

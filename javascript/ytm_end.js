@@ -2,7 +2,7 @@
 
 document.getElementById("heading").addEventListener("click",function() {
     clear_video();
-    shuffleVideoItems();
+    refreshVideoList(true);
 });
 
 const imgs = document.getElementsByTagName("img");
@@ -77,14 +77,15 @@ function load_data()
 
     
     document.getElementById("loading").style.display = "none";
-    shuffleVideoItems();
+    refreshVideoList(true);
 }
 
 var shuffleITV;
 
-function shuffleVideoItems()
+function refreshVideoList(doShuffle)
 {
-    shuffle(data);
+    if (doShuffle)
+        shuffle(data);
     const list = document.getElementById("video-list");
     list.innerHTML = "";
 
