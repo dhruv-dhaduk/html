@@ -42,7 +42,7 @@ p {
     position: relative;
 }
 
-.logo {
+.headerimg {
     display: inline-block;
     height: 1.28rem;
     margin-left: 0.75rem;
@@ -53,6 +53,11 @@ p {
     margin-top: auto;
     margin-bottom: auto;
 
+}
+
+.form {
+    right: 0;
+    margin-right: 0.75rem;
 }
 
 .videoplayer {
