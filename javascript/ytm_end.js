@@ -1,6 +1,6 @@
 // document.addEventListener("DOMContentLoaded", load_data());
 
-document.getElementById("heading").addEventListener("click",function() {
+document.getElementById("yt").addEventListener("click",function() {
     clear_video();
     refreshVideoList(true);
 });

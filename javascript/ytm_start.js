@@ -15,10 +15,6 @@ function play_video(videoData)
 	videoFeed.style.height = "calc(100vh - 3rem - 0.5625*100vw)";
 
 	setTimeout(() => {
-		document.getElementById("heading").addEventListener("click",function() {
-			clear_video();
-			refreshVideoList(true);
-		});
 		refreshVideoList(false);
 	}, 500);
 }
