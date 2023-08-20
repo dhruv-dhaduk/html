@@ -56,6 +56,7 @@ function load_data()
                 channel_icon.addEventListener("contextmenu",function(e) { e.preventDefault(); });
                 channel_icon.addEventListener("click", function() { window.open(r["channelLink"], "_blank"); });
                 video_item_texts.className = "video-item-texts";
+                video_item_texts.addEventListener("click", function() { play_video(r); });
                     video_title.className = "video-title";
                     video_title.innerHTML = r["videoTitle"];
                     additional_data.className = "video-additional-data";
