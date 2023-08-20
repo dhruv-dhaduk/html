@@ -25,12 +25,18 @@ function play_video(videoData)
 	const old_share = document.getElementById("shareBtn");
 	const new_share = old_share.cloneNode(true);
 	old_share.replaceWith(new_share);
-
 	new_share.addEventListener("click", function() {
 		navigator.share({
 			title: videoData["videoTitle"],
 			url: videoData["link"]
 		});
+	});
+
+	const old_subscribe = document.getElementById("subscribeBtn");
+	const new_subscribe = old_subscribe.cloneNode(true);
+	old_subscribe.replaceWith(new_subscribe);
+	new_subscribe.addEventListener("click", function() {
+		window.open(videoData["channelLink"], "_blank");
 	});
 
 	setTimeout(() => {
