@@ -4,6 +4,9 @@ document.getElementById("yt").addEventListener("click",function() {
     clear_video();
     refreshVideoList(true);
 });
+document.getElementById("form").addEventListener("click", function() {
+    window.open("https://forms.gle/qgnJPobNPGyQgNp99", "_blank");
+});
 
 const imgs = document.getElementsByTagName("img");
 for (ele of imgs)
