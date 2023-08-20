@@ -68,24 +68,20 @@ p {
 }
 
 .videoplay-info {
-    background-color: red;
-    margin-top: calc((0.5625 * 100vw));
+    display: none;
 }
 
 .videoplay-texts {
-    background-color: black;
     padding: 1rem;
 }
 
 .videoplay-channel {
-    background-color: black;
 
     padding-left: 1rem;
     position: relative;
 }
 
 .videoplay-buttons {
-    background-color: black;
 
     white-space: nowrap;
     overflow-x: scroll;
@@ -100,7 +96,6 @@ p {
 }
 
 .upnext {
-    background-color: black;
     font-size: 0.9rem;
     border-top: 1px solid #505050;
     padding: 1rem;
@@ -186,6 +181,12 @@ p {
     border-radius: 1.5em;
 
     margin-right: 1ch;
+
+    padding-left: 2.75rem;
+    background-size: 1.2rem;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 1rem;
 }
 
 .btn.likeBtn {
@@ -193,7 +194,7 @@ p {
     border-bottom-right-radius: 0;
     margin-right: 0;
     position: relative;
-
+    background-image: url("../res/logos/white/like_white.png");
 }
 .btn.likeBtn::after {
     content: "|";
@@ -213,6 +214,21 @@ p {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: 0;
+
+    color: #2c2c2c;
+
+    background-image: url("../res/logos/white/dislike_white.png");
+    background-position-x: center;
+    padding-left: 2.25rem;
+}
+.btn.shareBtn {
+    background-image: url("../res/logos/white/share_white.png");
+}
+.btn.saveBtn {
+    background-image: url("../res/logos/white/add_to_playlist_white.png");
+}
+.btn.reportBtn {
+    background-image: url("../res/logos/white/flag_white.png");
 }
 
 .thumbnail-container {

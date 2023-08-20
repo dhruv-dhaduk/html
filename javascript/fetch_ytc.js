@@ -8,7 +8,7 @@ const API_KEY_LIST = [];
 
 const data = [];
 
-// document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init);
 
 var data_length = -1;
 
