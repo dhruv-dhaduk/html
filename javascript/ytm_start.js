@@ -19,7 +19,6 @@ function play_video(videoData)
 
 	setTimeout(() => {
 		document.getElementById("heading").addEventListener("click",function() {
-			console.log("CLK");
 			clear_video();
 			shuffleVideoItems();
 		});

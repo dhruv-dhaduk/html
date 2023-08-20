@@ -1,7 +1,6 @@
 // document.addEventListener("DOMContentLoaded", load_data());
 
 document.getElementById("heading").addEventListener("click",function() {
-    console.log("CLK");
     clear_video();
     shuffleVideoItems();
 });
