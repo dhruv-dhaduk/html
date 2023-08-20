@@ -22,7 +22,11 @@ function play_video(videoData)
 	document.getElementById("videoplay-subscribers").innerHTML = convert_number_format(videoData["subscriberCount"], "");
 	document.getElementById("videoplay-likes").innerHTML = convert_number_format(videoData["likeCount"], "");
 
-	document.getElementById("shareBtn").addEventListener("click", function() {
+	const old_share = document.getElementById("shareBtn");
+	const new_share = old_share.cloneNode(true);
+	old_share.replaceWith(new_share);
+
+	new_share.addEventListener("click", function() {
 		navigator.share({
 			title: videoData["videoTitle"],
 			url: videoData["link"]
