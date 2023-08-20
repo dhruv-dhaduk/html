@@ -22,6 +22,13 @@ function play_video(videoData)
 	document.getElementById("videoplay-subscribers").innerHTML = convert_number_format(videoData["subscriberCount"], "");
 	document.getElementById("videoplay-likes").innerHTML = convert_number_format(videoData["likeCount"], "");
 
+	document.getElementById("shareBtn").addEventListener("click", function() {
+		navigator.share({
+			title: videoData["videoTitle"],
+			url: videoData["link"]
+		});
+	});
+
 	setTimeout(() => {
 		refreshVideoList(false);
 	}, 500);
