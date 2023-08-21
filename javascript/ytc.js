@@ -35,7 +35,7 @@ function convert_number_format(n, suffix)
 {
     if (n == undefined)
         return "N/A " + suffix;
-    
+
     if (n >= 1000000000)
         return (parseInt(n / 100000000) / 10).toString() + "B " + suffix;
     else if (n >= 1000000)
@@ -48,6 +48,9 @@ function convert_number_format(n, suffix)
 
 function convert_upload_time_format(uploadTime)
 {   
+    if (uploadTime == undefined)
+        return "N/A";
+
     const d = new Date(uploadTime);
     const timeDiff = (Date.now() - d) / 1000;
     
