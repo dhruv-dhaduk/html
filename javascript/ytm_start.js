@@ -3,6 +3,8 @@ if(!isMobileDevice())
     window.location.href = "youtube.html";
 }
 
+var playingVideoData;
+
 function play_video(videoData)
 {
 	const videoFeed = document.getElementById("video-feed");
@@ -21,6 +23,12 @@ function play_video(videoData)
 	document.getElementById("videoplay-channelTitle").innerHTML = videoData["channelTitle"];
 	document.getElementById("videoplay-subscribers").innerHTML = convert_number_format(videoData["subscriberCount"], "");
 	document.getElementById("videoplay-likes").innerHTML = convert_number_format(videoData["likeCount"], "");
+
+	if (playingVideoData != undefined)
+		playingVideoData["htmlItem"].style.display = "block";
+
+	videoData["htmlItem"].style.display = "none";
+	playingVideoData = videoData;
 
 	const old_share = document.getElementById("shareBtn");
 	const new_share = old_share.cloneNode(true);
