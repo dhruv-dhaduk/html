@@ -31,16 +31,19 @@ function convertDurationToHMS(duration) {
     }
 }
 
-function convert_number_format(viewCount, suffix)
+function convert_number_format(n, suffix)
 {
-    if (viewCount >= 1000000000)
-        return (parseInt(viewCount / 100000000) / 10).toString() + "B " + suffix;
-    else if (viewCount >= 1000000)
-        return (parseInt(viewCount / 100000) / 10).toString() + "M " + suffix;
-    else if (viewCount >= 1000)
-        return (parseInt(viewCount / 100) / 10).toString() + "K " + suffix;
+    if (n == undefined)
+        return "N/A " + suffix;
+    
+    if (n >= 1000000000)
+        return (parseInt(n / 100000000) / 10).toString() + "B " + suffix;
+    else if (n >= 1000000)
+        return (parseInt(n / 100000) / 10).toString() + "M " + suffix;
+    else if (n >= 1000)
+        return (parseInt(n / 100) / 10).toString() + "K " + suffix;
     else
-        return viewCount.toString() + " " + suffix;
+        return n.toString() + " " + suffix;
 }
 
 function convert_upload_time_format(uploadTime)
