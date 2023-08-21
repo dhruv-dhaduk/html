@@ -57,4 +57,7 @@ function clear_video()
 	document.getElementById("video-feed").style.height = "calc(100vh - 3rem)";
 	document.getElementById("videoplayer-container").innerHTML = "";
 	document.getElementById("videoplay-info").style.display = "none";
+
+	if (playingVideoData != undefined)
+		playingVideoData["htmlItem"].style.display = "block";
 }
