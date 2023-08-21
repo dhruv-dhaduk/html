@@ -1,5 +1,11 @@
 // document.addEventListener("DOMContentLoaded", load_data());
 
+const loading = document.getElementById("loading");
+const loadingItem = document.getElementsByClassName("loading-item")[0];
+const loadingItemSize = 4;
+for (var i = 0; i < loadingItemSize - 1; i++)
+    loading.append(loadingItem.cloneNode(true));
+
 document.getElementById("yt").addEventListener("click",function() {
     clear_video();
     refreshVideoList(true);
