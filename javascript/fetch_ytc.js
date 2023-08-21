@@ -135,7 +135,8 @@ function fetch_yt_video_data(link, videoDataRet, API_KEY)
         const snippet = video.snippet;
         const statistics = video.statistics;
 
-        const thumbnail = snippet.thumbnails.maxres.url;
+        var thumbnail = get_thumbnail_url(snippet.thumbnails);
+        
         const videoTitle = snippet.title;
         const channelTitle = snippet.channelTitle;
         const channelId = snippet.channelId;
@@ -187,4 +188,33 @@ function fetch_yt_video_data(link, videoDataRet, API_KEY)
         console.error("Error fetching video details:", error);
         videoDataRet["status"] = "failed";
     });
+}
+
+function get_thumbnail_url(thumbnails)
+{
+    var thumbnail;
+
+    try {
+        thumbnail = thumbnails.maxres.url;
+    }
+    catch(err) {
+        try {
+            thumbnail = thumbnails.standard.url;
+        }
+        catch(err) {
+            try {
+                thumbnail = thumbnails.high.url;
+            }
+            catch(err) {
+                try {
+                    thumbnail = thumbnails.medium.url;
+                }
+                catch(err) {
+                    thumbnail = thumbnails.default.url;
+                }
+            }
+        }
+    }
+
+    return thumbnail;
 }
