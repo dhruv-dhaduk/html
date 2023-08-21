@@ -76,7 +76,7 @@ function read_sheet()
                     }
 
                     const itvID = setInterval(() => {
-                        if (r["status"] == "done" || r["status"] == "failed")
+                        if (r["status"] == "done" || r["status"] == "failed" || r["status"] == "linkerror")
                         {
                             data.push(r);
                             clearInterval(itvID);
@@ -107,6 +107,12 @@ function fetch_yt_video_data(link, videoDataRet, API_KEY)
 {
     // Extract video ID from the link
     const videoId = get_videoID_from_link(link);
+
+    if (videoId == null)
+    {
+        videoDataRet["status"] = "linkerror";
+        return;
+    }
 
     // Construct the API endpoint URL
     const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet,contentDetails&id=${videoId}&key=${API_KEY}`;

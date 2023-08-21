@@ -1,6 +1,13 @@
 function get_videoID_from_link(link) 
 {
-    const url = new URL(link);
+    var url;
+    try {
+        url = new URL(link);
+    }
+    catch(err) {
+        return null;
+    }
+
     if (url.hostname === 'www.youtube.com' && url.searchParams.has('v')) 
     {
         return url.searchParams.get('v');
