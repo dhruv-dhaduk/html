@@ -19,6 +19,10 @@ document.getElementById("refresh").addEventListener("click", function() {
 document.getElementById("shuffle").addEventListener("click", function() {
     refreshVideoList(true);
 });
+document.getElementById("clear-video").addEventListener("click", function() {
+    clear_video();
+    refreshVideoList(false);
+});
 
 const imgs = document.getElementsByTagName("img");
 for (ele of imgs)
