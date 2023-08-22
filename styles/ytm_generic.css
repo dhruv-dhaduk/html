@@ -25,6 +25,12 @@ p {
     user-select: none;
 }
 
+.dot {
+    font-weight: bold;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
 .videoplayer {
     width: 100%;
     height: calc(0.5625 * 100vw);
@@ -35,4 +41,13 @@ p {
 .video-feed {
     height: calc(100vh - 3rem);
     overflow-y: scroll;
+}
+
+
+.footer {
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+    border-top: 1px solid #404040;
 }
