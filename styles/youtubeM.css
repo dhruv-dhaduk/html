@@ -117,17 +117,22 @@ p {
     position: relative;
 }
 
-.shuffle {
+.upnextBtn {
     display: inline-block;
     position: absolute;
     right: 0;
     height: 1.5rem;
-    margin-right: 1rem;
 
     top: 0;
     bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto
+}
+.upnextBtn.shuffle {
+    margin-right: 1rem;
+}
+.upnextBtn.clear-video {
+    height: 1.35rem;
+    margin-right: 3.5rem;
 }
 
 .videoplay-title {
