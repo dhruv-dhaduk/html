@@ -151,7 +151,7 @@
     border-bottom-right-radius: 0;
     margin-right: 0;
     position: relative;
-    background-image: url("../res/logos/white/like_white.png");
+    background-image: url("../../res/logos/white/like_white.png");
 }
 .btn.likeBtn::after {
     content: "|";
@@ -174,16 +174,16 @@
 
     color: #2c2c2c;
 
-    background-image: url("../res/logos/white/dislike_white.png");
+    background-image: url("../../res/logos/white/dislike_white.png");
     background-position-x: center;
     padding-left: 2.25rem;
 }
 .btn.shareBtn {
-    background-image: url("../res/logos/white/share_white.png");
+    background-image: url("../../res/logos/white/share_white.png");
 }
 .btn.saveBtn {
-    background-image: url("../res/logos/white/add_to_playlist_white.png");
+    background-image: url("../../res/logos/white/add_to_playlist_white.png");
 }
 .btn.reportBtn {
-    background-image: url("../res/logos/white/flag_white.png");
+    background-image: url("../../res/logos/white/flag_white.png");
 }
