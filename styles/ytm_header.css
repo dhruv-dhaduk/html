@@ -1,0 +1,36 @@
+.header {
+    background-color: black;
+    width: 100vw;
+    height: 3rem;
+    margin: 0;
+    border-bottom: 1px solid #404040;
+    vertical-align: middle;
+    display: flex;
+    align-content: center;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.headerimg {
+    display: inline-block;
+    height: 1.28rem;
+    margin-left: 0.75rem;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.form {
+    right: 0;
+    margin-right: 0.75rem;
+}
+
+.refresh {
+    right: 0;
+    margin-right: calc(2 * 0.75rem + 1.5rem);
+}
