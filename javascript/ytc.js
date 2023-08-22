@@ -62,55 +62,27 @@ function convert_upload_time_format(uploadTime)
     const timeDiff = (Date.now() - d) / 1000;
     
     if (timeDiff >= 31536000)
-    {
-        const years = parseInt(timeDiff / 31536000);
-        if (years > 1)
-            return years + " years ago";
-        else
-            return years + " year ago";
-    }
+        return time_relative_to(timeDiff, 31536000, "year");
     else if (timeDiff >= 2592000)
-    {
-        const months = parseInt(timeDiff / 2592000);
-        if (months > 1)
-            return months + " months ago";
-        else
-            return months + " month ago";
-    }
+        return time_relative_to(timeDiff, 2592000, "month");
     else if (timeDiff >= 604800)
-    {
-        const weeks = parseInt(timeDiff / 604800);
-        if (weeks > 1)
-            return weeks + " weeks ago";
-        else 
-            return weeks + " week ago";
-    }
+        return time_relative_to(timeDiff, 604800, "week");
     else if (timeDiff >= 86400)
-    {
-        const days = parseInt(timeDiff / 86400);
-        if (days > 1)
-            return days + " days ago";
-        else 
-            return days + " day ago";
-    }
+        return time_relative_to(timeDiff, 86400, "day");
     else if (timeDiff >= 3600)
-    {
-        const hours = parseInt(timeDiff / 3600);
-        if (hours > 1)
-            return hours + " hours ago";
-        else 
-            return hours + " hour ago";
-    }
+        return time_relative_to(timeDiff, 3600, "hour");
     else if (timeDiff > 60)
-    {
-        const mins = parseInt(timeDiff / 60);
-        if (mins > 1)
-            return mins + " minutes ago";
-        else
-            return mins + " minute ago";
-    }
+        return time_relative_to(timeDiff, 60, "minute");
     else
-    {
         return "just now";
-    }
+}
+
+function time_relative_to(timediff, unitTime, label)
+{
+    const x = parseInt(timediff / unitTime);
+
+    if (x > 1)
+        return x + " " + label + "s ago";
+    else
+        return x + " " + label + " ago";
 }
