@@ -118,10 +118,16 @@ p {
 }
 
 .shuffle {
+    display: inline-block;
     position: absolute;
     right: 0;
-    height: 1.25rem;
-    margin-right: 0.75rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .videoplay-title {
