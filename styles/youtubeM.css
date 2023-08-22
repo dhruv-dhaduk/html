@@ -28,13 +28,6 @@ p {
 .header {
     background-color: black;
     width: 100vw;
-    height: fit-content;
-    margin: 0;
-}
-
-.heading {
-    background-color: black;
-    width: 100%;
     height: 3rem;
     margin: 0;
     border-bottom: 1px solid #404040;
