@@ -9,17 +9,11 @@ function get_videoID_from_link(link)
     }
 
     if (url.hostname === 'www.youtube.com' && url.searchParams.has('v')) 
-    {
         return url.searchParams.get('v');
-    } 
     else if (url.hostname === 'youtu.be')
-    {
-        return url.pathname.substr(1); // Remove the leading '/'
-    } 
+        return url.pathname.substr(1);
     else 
-    {
         return null;
-    }
 }
 
 function convertDurationToHMS(duration) {
@@ -29,13 +23,9 @@ function convertDurationToHMS(duration) {
     const seconds = (parseInt(match[3]) || 0);
 
     if (hours == 0)
-    {
         return `${minutes.toString()}:${seconds.toString().padStart(2, '0')}`;
-    }
     else
-    {
         return `${hours.toString()}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
 }
 
 function convert_number_format(n, suffix)
