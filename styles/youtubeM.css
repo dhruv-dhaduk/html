@@ -1,15 +1,3 @@
-.videoplayer {
-    width: 100%;
-    height: calc(0.5625 * 100vw);
-    margin: 0;
-    padding: 0;
-}
-
-.video-feed {
-    height: calc(100vh - 3rem);
-    overflow-y: scroll;
-}
-
 .videoplay-info {
     display: none;
 }
