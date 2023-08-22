@@ -16,6 +16,9 @@ document.getElementById("form").addEventListener("click", function() {
 document.getElementById("refresh").addEventListener("click", function() {
     window.location.reload();
 });
+document.getElementById("shuffle").addEventListener("click", function() {
+    refreshVideoList(true);
+});
 
 const imgs = document.getElementsByTagName("img");
 for (ele of imgs)
