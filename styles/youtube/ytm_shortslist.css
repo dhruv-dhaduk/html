@@ -53,6 +53,7 @@
     width: calc(0.5625 * 0.5625 * 110vw);
     height: calc(0.5625 * 110vw);
 
+    border-radius: 0.5rem;
     margin-right: 0.5rem;
 
     position: relative;
