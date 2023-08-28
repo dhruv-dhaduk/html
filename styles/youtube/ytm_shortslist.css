@@ -48,14 +48,46 @@
     width: calc(0.5625 * 0.5625 * 110vw);
     height: calc(0.5625 * 110vw);
 
-    border-radius: 0.5rem;
     margin-right: 0.5rem;
 
-    overflow: hidden;
+    position: relative;
 }
 
 .shorts-thumbnail {
     object-fit: cover;
     width: 100%;
     height: 100%;
+
+    opacity: 75%;
+
+    border-radius: 0.5rem;
+}
+
+.shorts-text {
+    position: absolute;
+    bottom: 0;
+    /* background-color: black; */
+    width: 100%;
+}
+
+.shorts-title {
+    font-size: 0.9rem;
+
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+            line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    font-weight: bolder;
+    margin: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.shorts-views {
+    font-size: 0.75rem;
+    margin: 0.5rem;
+    margin-top: 0;
 }
