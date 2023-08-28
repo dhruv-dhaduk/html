@@ -1,8 +1,41 @@
 .shorts-feed {
+    background-color: #2c2c2c;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.shorts-header {
     background-color: black;
+    height: 3rem;
+
+    position: relative;
+}
+
+.shorts-icon-text {
+    display: inline-block;
+    height: 1.28rem;
+    margin-left: 0.75rem;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.shorts-icon {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.shorts-heading {
+    font-weight: bold;
+    margin-left: 0.25rem;
 }
 
 .shorts-list {
+    background-color: black;
     padding: 0.5rem;
     overflow-x: scroll;
     white-space: nowrap;
