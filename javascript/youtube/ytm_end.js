@@ -37,8 +37,9 @@ function load_data()
     //     data.push(r);
     // }
 
-    const list = document.getElementById("video-list");
-
+    const shorts_list = document.getElementById("shorts-list");
+    var shortsCount = 0;
+    
     for (const r of data) 
     {
         r["apiKey"] = "";
@@ -46,13 +47,21 @@ function load_data()
             continue;
         }
 
-        if (r["type"] == "video")
+        if (r["type"] == "video") {
             create_html_video_item(r);
-        else
+        }
+        else if (r["type"] == "short") {
+            create_html_shorts_item(r, shorts_list);
+            shortsCount++;
+        }
+        else {
             r["htmlItem"] = "";
+        }
     }
     
     document.getElementById("loading").style.display = "none";
+    if (shortsCount > 0)
+        document.getElementById("shorts-feed").style.display = "block";
     refreshVideoList(true);
 }
 
@@ -108,24 +117,77 @@ function create_html_video_item(r)
         r["htmlItem"] = container;
 }
 
-var shuffleITV;
+function create_html_shorts_item(r, l)
+{
+    const item = document.createElement("div");
+        const thumb = document.createElement("img");
+        const texts = document.createElement("div");
+            const title = document.createElement("p");
+            const views = document.createElement("p");
+
+    item.className = "shorts-item";
+    item.addEventListener("click", function() {
+        window.open(r["link"], "_blank");
+    });
+        thumb.className = "shorts-thumbnail";
+        thumb.src = r["thumbnail"];
+        texts.className = "shorts-text";
+            title.className = "shorts-title";
+            title.innerHTML = r["videoTitle"];
+            views.className = "shorts-views";
+            views.innerHTML = convert_number_format(r["viewCount"], "views");
+        
+    texts.append(title);
+    texts.append(views);
+    item.append(thumb);
+    item.append(texts);
+
+    r["htmlItem"] = item;
+
+    // l.append(item);
+}
+
+var videoslistITV, shortslistITV;
 
 function refreshVideoList(doShuffle)
 {
     if (doShuffle)
         shuffle(data);
-    const list = document.getElementById("video-list");
-    list.innerHTML = "";
 
-    clearInterval(shuffleITV);
-    var i = 0;
-    shuffleITV = setInterval(() => {
-        if (i >= data.length){
-            clearInterval(shuffleITV);
+    const videoslist = document.getElementById("video-list");
+    const shortslist = document.getElementById("shorts-list");
+    videoslist.innerHTML = "";
+    shortslist.innerHTML = "";
+
+    clearInterval(videoslistITV);
+    clearInterval(shortslistITV);
+
+    var videosCt = 0;
+    videoslistITV = setInterval(() => {
+        while ((videosCt < data.length) && (data[videosCt]["status"] != "done" || data[videosCt]["type"] != "video"))
+            videosCt++;
+
+        if (videosCt >= data.length) {
+            clearInterval(videoslistITV);
             return;
         }
-        if (data[i]["status"] == "done")
-            list.append(data[i]["htmlItem"]);
-        i++;
-    }, 200);
+
+        videoslist.append(data[videosCt]["htmlItem"]);
+        videosCt++;
+    }, 100);
+
+    var shortsCt = 0;
+    shortslistITV = setInterval(() => {
+        while ((shortsCt < data.length) && (data[shortsCt]["status"] != "done" || data[shortsCt]["type"] != "short"))
+            shortsCt++;
+
+        if (shortsCt >= data.length) {
+            clearInterval(shortslistITV);
+            return;
+        }
+
+        shortslist.append(data[shortsCt]["htmlItem"]);
+        shortsCt++;
+    }, 100);
+
 }
