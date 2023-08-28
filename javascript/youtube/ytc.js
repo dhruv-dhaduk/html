@@ -8,12 +8,31 @@ function get_videoID_from_link(link)
         return null;
     }
 
-    if (url.hostname === 'www.youtube.com' && url.searchParams.has('v')) 
-        return url.searchParams.get('v');
+    const vid = {};
+
+    if (url.hostname === 'www.youtube.com' && url.searchParams.has('v'))
+    {
+        vid["type"] = "video";
+        vid["id"] = url.searchParams.get('v');
+        return vid;
+    }
     else if (url.hostname === 'youtu.be')
-        return url.pathname.substr(1);
-    else 
+    {
+        vid["type"] = "video";
+        vid["id"] = url.pathname.substr(1);
+        return vid;
+    }
+    else if (url.pathname.startsWith("/shorts/"))
+    {
+        vid["type"] = "short";
+        vid["id"] = url.pathname.substring(url.pathname.indexOf('/', 1) + 1);
+        return vid;
+    }
+    else
+    { 
+        console.log("LINK ERROR");
         return null;
+    }
 }
 
 function convertDurationToHMS(duration) {

@@ -111,13 +111,17 @@ function read_sheet()
 
 function fetch_yt_video_data(link, videoDataRet, API_KEY)
 {
-    const videoId = get_videoID_from_link(link);
+    const videoIdDict = get_videoID_from_link(link);
 
-    if (videoId == null)
+    if (videoIdDict == null)
     {
         videoDataRet["status"] = "linkerror";
         return;
     }
+
+    const videoId = videoIdDict["id"];
+    videoDataRet["id"] = videoId;
+    videoDataRet["type"] = videoIdDict["type"];
 
     const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet,contentDetails&id=${videoId}&key=${API_KEY}`;
 
