@@ -46,7 +46,10 @@ function load_data()
             continue;
         }
 
-        create_html_video_item(r);
+        if (r["type"] == "video")
+            create_html_video_item(r);
+        else
+            r["htmlItem"] = "";
     }
     
     document.getElementById("loading").style.display = "none";
