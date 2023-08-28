@@ -50,8 +50,8 @@
     background-color: #2c2c2c;
     display: inline-block;
 
-    width: calc(0.5625 * 0.5625 * 110vw);
-    height: calc(0.5625 * 110vw);
+    width: calc(0.5625 * 0.5625 * 125vw);
+    height: calc(0.5625 * 125vw);
 
     border-radius: 0.5rem;
     margin-right: 0.5rem;
