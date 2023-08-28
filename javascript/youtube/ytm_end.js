@@ -37,7 +37,6 @@ function load_data()
     //     data.push(r);
     // }
 
-    const middle_dot = " <span class=\"dot\">&#183</span> ";
     const list = document.getElementById("video-list");
 
     for (const r of data) 
@@ -47,7 +46,18 @@ function load_data()
             continue;
         }
 
-        const container = document.createElement("div");
+        create_html_video_item(r);
+    }
+    
+    document.getElementById("loading").style.display = "none";
+    refreshVideoList(true);
+}
+
+function create_html_video_item(r)
+{
+    const middle_dot = " <span class=\"dot\">&#183</span> ";
+
+    const container = document.createElement("div");
             const thumb_container = document.createElement("div");
                 const thumbnail = document.createElement("img");
                 const duration = document.createElement("p");
@@ -93,11 +103,6 @@ function load_data()
         container.append(video_item_info);
 
         r["htmlItem"] = container;
-    }
-
-    
-    document.getElementById("loading").style.display = "none";
-    refreshVideoList(true);
 }
 
 var shuffleITV;
