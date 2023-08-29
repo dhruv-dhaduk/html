@@ -37,7 +37,6 @@ function load_data()
     //     data.push(r);
     // }
 
-    const shorts_list = document.getElementById("shorts-list");
     var shortsCount = 0;
     
     for (const r of data) 
@@ -51,7 +50,7 @@ function load_data()
             create_html_video_item(r);
         }
         else if (r["type"] == "short") {
-            create_html_shorts_item(r, shorts_list);
+            create_html_shorts_item(r);
             shortsCount++;
         }
         else {
@@ -60,8 +59,8 @@ function load_data()
     }
     
     document.getElementById("loading").style.display = "none";
-    if (shortsCount > 0)
-        document.getElementById("shorts-feed").style.display = "block";
+    // if (shortsCount > 0)
+    //     document.getElementById("shorts-feed").style.display = "block";
     refreshVideoList(true);
 }
 
@@ -117,7 +116,7 @@ function create_html_video_item(r)
         r["htmlItem"] = container;
 }
 
-function create_html_shorts_item(r, l)
+function create_html_shorts_item(r)
 {
     const item = document.createElement("div");
         const thumb = document.createElement("img");
@@ -155,23 +154,28 @@ function refreshVideoList(doShuffle)
         shuffle(data);
 
     const videoslist = document.getElementById("video-list");
-    const shortslist = document.getElementById("shorts-list");
     videoslist.innerHTML = "";
-    shortslist.innerHTML = "";
 
+    const shortsfeedList = create_shorts_feed();
+    const shortsfeed = shortsfeedList[0];
+    const shortslist = shortsfeedList[1];
+    
     clearInterval(videoslistITV);
     clearInterval(shortslistITV);
-
+    
     var videosCt = 0;
     videoslistITV = setInterval(() => {
-        while ((videosCt < data.length) && (data[videosCt]["status"] != "done" || data[videosCt]["type"] != "video"))
-            videosCt++;
+        if (videoslist.childElementCount == 1)
+            videoslist.append(shortsfeed);
 
+        while ((videosCt < data.length) && (data[videosCt]["status"] != "done" || data[videosCt]["type"] != "video"))
+        videosCt++;
+    
         if (videosCt >= data.length) {
             clearInterval(videoslistITV);
             return;
         }
-
+        
         videoslist.append(data[videosCt]["htmlItem"]);
         videosCt++;
     }, 100);
@@ -190,4 +194,33 @@ function refreshVideoList(doShuffle)
         shortsCt++;
     }, 100);
 
+}
+
+function create_shorts_feed()
+{
+    const shortsFeed = document.createElement("div");
+        const shortsHeader = document.createElement("div");
+            const shortsIconText = document.createElement("div");
+                const shortsIcon = document.createElement("img");
+                const shortsHeading = document.createElement("span");
+        const shortsList = document.createElement("div");
+
+    shortsFeed.className = "shorts-feed";
+    shortsFeed.id = "shorts-feed";
+        shortsHeader.className = "shorts-header";
+            shortsIconText.className = "shorts-icon-text";
+                shortsIcon.className = "shorts-icon";
+                shortsIcon.src = "../res/logos/colored/shorts.png";
+                shortsHeading.className = "shorts-heading";
+                shortsHeading.innerHTML = "Shorts";
+        shortsList.className = "shorts-list";
+        shortsList.id = "shorts-list";
+
+    shortsIconText.append(shortsIcon);
+    shortsIconText.append(shortsHeading);
+    shortsHeader.append(shortsIconText);
+    shortsFeed.append(shortsHeader);
+    shortsFeed.append(shortsList);
+
+    return [shortsFeed, shortsList];
 }
