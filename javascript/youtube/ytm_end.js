@@ -137,7 +137,8 @@ function create_html_shorts_item(r)
             views.innerHTML = convert_number_format(r["viewCount"], "views");
 
 
-// Prevent the context menu.               thumb.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
+// Prevent the context menu.
+thumb.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
         
     texts.append(title);
     texts.append(views);
@@ -219,7 +220,8 @@ function create_shorts_feed()
         shortsList.className = "shorts-list";
         shortsList.id = "shorts-list";
 
-// Prevent context menu.               shortsIcon.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
+// Prevent context menu.
+shortsIcon.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
 
     shortsIconText.append(shortsIcon);
     shortsIconText.append(shortsHeading);
