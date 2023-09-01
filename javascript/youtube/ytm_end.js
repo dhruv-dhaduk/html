@@ -135,6 +135,9 @@ function create_html_shorts_item(r)
             title.innerHTML = r["videoTitle"];
             views.className = "shorts-views";
             views.innerHTML = convert_number_format(r["viewCount"], "views");
+
+
+// Prevent the context menu.               thumb.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
         
     texts.append(title);
     texts.append(views);
@@ -215,6 +218,8 @@ function create_shorts_feed()
                 shortsHeading.innerHTML = "Shorts";
         shortsList.className = "shorts-list";
         shortsList.id = "shorts-list";
+
+// Prevent context menu.               shortsIcon.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
 
     shortsIconText.append(shortsIcon);
     shortsIconText.append(shortsHeading);
