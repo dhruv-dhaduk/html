@@ -15,6 +15,7 @@ body {
 
 button, img {
     cursor: pointer;
+    user-select: none;
 }
 
 p {
