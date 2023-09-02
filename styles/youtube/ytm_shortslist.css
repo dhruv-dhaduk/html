@@ -5,10 +5,6 @@
     padding-bottom: 0.25rem;
 }
 
-.shorts-feed * {
-    user-select: none;
-}
-
 .shorts-header {
     background-color: black;
     height: 3rem;

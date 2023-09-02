@@ -130,15 +130,12 @@ function create_html_shorts_item(r)
     });
         thumb.className = "shorts-thumbnail";
         thumb.src = r["thumbnail"];
+        thumb.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
         texts.className = "shorts-text";
             title.className = "shorts-title";
             title.innerHTML = r["videoTitle"];
             views.className = "shorts-views";
             views.innerHTML = convert_number_format(r["viewCount"], "views");
-
-
-// Prevent the context menu.
-thumb.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
         
     texts.append(title);
     texts.append(views);
@@ -215,13 +212,11 @@ function create_shorts_feed()
             shortsIconText.className = "shorts-icon-text";
                 shortsIcon.className = "shorts-icon";
                 shortsIcon.src = "../res/logos/colored/shorts.png";
+                shortsIcon.addEventListener("contextmenu", function(e) { e.preventDefault(); });
                 shortsHeading.className = "shorts-heading";
                 shortsHeading.innerHTML = "Shorts";
         shortsList.className = "shorts-list";
         shortsList.id = "shorts-list";
-
-// Prevent context menu.
-shortsIcon.addEventListener("contextmenu", function(e) { e.preventDefault(); }); 
 
     shortsIconText.append(shortsIcon);
     shortsIconText.append(shortsHeading);
