@@ -6,113 +6,18 @@
 
         <title>सस्ता YouTube</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-        <link rel="shortcut icon" href="../res/logos/colored/youtube.png" type="image/x-icon">
-
-        <link rel="stylesheet" href="../styles/youtube/ytm_generic.css">
-        <link rel="stylesheet" href="../styles/youtube/ytm_header.css">
-        <link rel="stylesheet" href="../styles/youtube/ytm_videoplayinfo.css">
-        <link rel="stylesheet" href="../styles/youtube/ytm_shortslist.css">
-        <link rel="stylesheet" href="../styles/youtube/ytm_videolist.css">
-        <link rel="stylesheet" href="../styles/youtube/ytm_loading.css">
-
         <script src="../javascript/device.js"></script>
-        <script src="../javascript/youtube/ytm_start.js"></script>
-        <script src="../javascript/common.js"></script>
-        <script src="../javascript/youtube/ytc.js"></script>
-        <script src="../javascript/youtube/fetch_ytc.js"></script>
-        <!-- <script src="../javascript/youtube/yt_dummy.js"></script> -->
+
+        <script>
+            if (isMobileDevice())
+                window.location.href = "https://sasta-youtube-777.onrender.com/youtubeM.html";
+            else
+                window.location.href = "https://sasta-youtube-777.onrender.com/youtube.html";
+        </script>
 
     </head>
 
     <body>
-
-        <div class="header" id="header">
-
-                <img src="../res/logos/colored/sasta_yt.png" class="headerimg yt" id="yt">
-                <img src="../res/logos/white/refresh_white.png" class="headerimg refresh" id="refresh">
-                <img src="../res/logos/white/form_white.png" class="headerimg form" id="form">
-
-        </div>
-
-        <div class="videoplayer-container" id="videoplayer-container">
-        </div>
-
-        <div class="video-feed" id="video-feed">
-
-            <div class="videoplay-info" id="videoplay-info">
-
-                <div class="videoplay-texts">
-                    <p class="videoplay-title" id="videoplay-title"></p>
-                    <p class="videoplay-other">
-                        <span class="videoplay-views" id="videoplay-views"></span> <span class="dot">&#183</span> <span class="videoplay-uploaded" id="videoplay-uploaded"></span>
-                    </p>
-                </div>
-
-                <div class="videoplay-channel">
-                    <img class="videoplay-channelIcon" id="videoplay-channelIcon" src="https://yt3.ggpht.com/zUIENkLHwVcF8YXnR2FOq2jmb7TopeaxmPm3nVPzjQ_a6C_9hdBJ9o1UXejThQBjfBkBNBTfSQ=s88-c-k-c0x00ffffff-no-rj">
-                    <span class="videoplay-channelTitle" id="videoplay-channelTitle">Sony SAB</span>
-                    <span class="videoplay-subscribers" id="videoplay-subscribers">8.45 crore</span>
-                    <button class="subscribeBtn" id="subscribeBtn">Subscribe</button>
-                </div>
-
-                <div class="videoplay-buttons">
-                    <button class="likeBtn btn"><span class="videoplay-likes" id="videoplay-likes">1 lakh</span></button>
-                    <button class="dislikeBtn btn">&#183</button>
-                    <button class="shareBtn btn" id="shareBtn">Share</button>
-                    <button class="saveBtn btn">Save</button>
-                    <button class="reportBtn btn">Report</button>
-                </div>
-
-                <div class="upnext">
-                    Up next 
-                    <img src="../res/logos/white/up_arrow_white.png" class="clear-video upnextBtn" id="clear-video">
-                    <img src="../res/logos/white/shuffle_white.png" class="shuffle upnextBtn" id="shuffle"> 
-                </div>
-
-            </div>
-
-            <!-- <div class="shorts-feed" id="shorts-feed">
-                <div class="shorts-header">
-                    <div class="shorts-icon-text"> <img class="shorts-icon" src="../res/logos/colored/shorts.png"> <span class="shorts-heading">Shorts</span> </div>
-                </div>
-                <div class="shorts-list" id="shorts-list">
-                    <div class="shorts-item">
-                        <img class="shorts-thumbnail" src="https://i.ytimg.com/vi/hyEc-JtZTYc/maxresdefault.jpg">
-                        <div class="shorts-text">
-                            <p class="shorts-title">Sakth launda In Metro 🤪😂 #shorts #comedy #deepeshyadav #myfavoriteshorts</p>
-                            <p class="shorts-views">95K views</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="video-list" id="video-list">
-            </div>
-
-            <div class="loading" id="loading">
-                <div class="loading-item">
-                    <div class="loading-thumbnail"></div>
-                    <div class="loading-info">
-                        <div class="loading-channelIcon"></div>
-                        <div class="loading-texts">
-                            <div class="loading-line1"></div>
-                            <div class="loading-line2"></div>
-                            <div class="loading-line3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="footer">
-                <span class="dot">&#183</span>
-            </p>
-
-        </div>
-
-        <script src="../javascript/youtube/ytm_end.js"></script>
-
     </body>
 
 </html>
