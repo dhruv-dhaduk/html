@@ -106,7 +106,7 @@ function load_data()
             window.open(r["link"], "_blank");
         });
         img.addEventListener("error", function() {
-            img.src = "../res/images/document.png";
+            img.src = "https://dhruv-dhaduk.github.io/assets/images/document.png";
             var new_img = img.cloneNode(true);
             img.parentNode.replaceChild(new_img, img);
             new_img.addEventListener("click", function() {
