@@ -14,3 +14,15 @@ h1 {
     left: 0;
     margin: auto;
 }
+
+@keyframes grow {
+    0%, 100% {
+        font-size: 2rem;
+        opacity: 0%;
+    }
+
+    50% {
+        font-size: 15rem;
+        opacity: 100%;
+    }
+}
