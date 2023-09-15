@@ -3,3 +3,14 @@ body {
     color: white;
     font-family: sans-serif;
 }
+
+h1 {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
